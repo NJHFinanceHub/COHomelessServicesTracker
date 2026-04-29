@@ -1,0 +1,6 @@
+requests>=2.32
+pdfplumber>=0.11
+pypdf>=5.0
+python-dateutil>=2.9
+pytest>=8.3
+ruff>=0.6

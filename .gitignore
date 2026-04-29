@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.local
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Data — raw & interim are large and reproducible; processed JSON is checked in
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+
+# SQLite (built artifact)
+*.sqlite
+*.sqlite-journal
+*.db
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.swp

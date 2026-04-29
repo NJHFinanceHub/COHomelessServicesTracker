@@ -1,0 +1,40 @@
+name: ETL nightly
+
+on:
+  schedule:
+    - cron: "17 9 * * *"  # 09:17 UTC = 03:17 MT (after city batch jobs typically settle)
+  workflow_dispatch:
+
+jobs:
+  etl:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r etl/requirements.txt
+      - name: Initialize DB
+        run: make db
+      - name: Run ETL
+        env:
+          SOCRATA_APP_TOKEN: ${{ secrets.SOCRATA_APP_TOKEN }}
+        run: make etl
+      - name: Compute unit economics
+        run: make compute
+      - name: Commit refreshed processed data
+        run: |
+          git config user.name  "denver-tracker-bot"
+          git config user.email "bot@denver-tracker.local"
+          git add data/processed
+          if ! git diff --cached --quiet; then
+            git commit -m "data: nightly ETL refresh"
+            git push
+          else
+            echo "No data changes."
+          fi
