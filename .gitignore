@@ -17,6 +17,7 @@ next-env.d.ts
 # Data — raw & interim are large and reproducible; processed JSON is checked in
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/checkbook_columns.json
 data/interim/*
 !data/interim/.gitkeep
 

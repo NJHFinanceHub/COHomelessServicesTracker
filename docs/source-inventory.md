@@ -11,7 +11,7 @@ Every primary source the site relies on, with current ingest status. Status lege
 
 | # | Source | Access | Cadence | Phase | Status |
 |---|---|---|---|---|---|
-| 1 | Denver Open Checkbook | Socrata SODA 2.0 — `data.colorado.gov/Business/City-of-Denver-Checkbook/wnau-xrqi` | Daily | 1 | scaffolded |
+| 1 | Denver Open Checkbook | Socrata SODA 2.0 — `data.colorado.gov/Business/City-of-Denver-Checkbook/wnau-xrqi` | Daily | 1 | scaffolded; awaiting `data/raw/checkbook_columns.json` from a network-enabled probe run |
 | 2 | Denver Open Data Catalog (contracts, P-card, vendor master) | `denvergov.org/opendata` | Varies | 3 | not yet ingested |
 | 3 | HOST Annual Action Plans | `denvergov.org` HOST plans-and-reports page (PDF) | Annual | 2 | not yet ingested |
 | 4 | HOST quarterly performance reports | Same page (PDF) | Quarterly | 5 | not yet ingested |
@@ -34,3 +34,23 @@ Every source PDF and HTML snapshot will be mirrored to Cloudflare R2 with a SHA-
 ## Provenance log
 
 All fetches are logged in the `source_fetch` table (see `db/schema.sql`). For Phase 0 the table is empty.
+
+## How to run the Phase 0 column probe
+
+The Phase 1 ingest refuses to run without a committed column-map artifact. To produce it, from a host with network access:
+
+```bash
+make db
+python -m etl.sources.denver_checkbook.scan --columns
+git add data/raw/checkbook_columns.json && git commit -m "data: lock Denver checkbook column map"
+```
+
+If the probe writes any of `vendor_field`, `amount_field`, or `date_field` as `null`, inspect the column list in the JSON, add the real field name to the appropriate `*_FIELD_CANDIDATES` list in `etl/sources/denver_checkbook/scan.py`, and re-run.
+
+Then to surface unmatched recipients before extending the seed list:
+
+```bash
+python -m etl.sources.denver_checkbook.scan --new-candidates --rows 20000 --top 200
+```
+
+This writes a CSV under `data/interim/` listing the highest-spending vendors that the deterministic matcher did not catch. Review the CSV, add genuine homelessness recipients to `etl/sources/denver_checkbook/vendor_seeds.SEEDS`, and re-run until the unmatched tail is clearly out of scope.
