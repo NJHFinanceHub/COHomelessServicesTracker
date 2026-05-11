@@ -1,0 +1,79 @@
+{
+  "fetched_at": "2026-05-11T04:37:19.985054+00:00",
+  "hits": [
+    {
+      "columns_field_name": [
+        "city",
+        "programarea",
+        "department",
+        "year",
+        "projectdescription",
+        "expensesubcategory",
+        "paymentdate",
+        "state",
+        "payee",
+        "rowid",
+        "expensecategory",
+        "project",
+        "fundingsourcedescription",
+        "paymentid",
+        "purchaseorder",
+        "amount"
+      ],
+      "createdAt": "2022-03-28T20:21:54.000Z",
+      "description": "These datasets include accounts payable payments and procurement card transactions made to vendors by the City and County of Denver for the current year to date and previous years. The datasets are refreshed each day with the previous business day's transactions. New travel datasets cannot be provided from August 2017 due to confidentiality concerns however, historic travel datasets will be mainta",
+      "domain": "data.colorado.gov",
+      "id": "wnau-xrqi",
+      "name": "City of Denver Checkbook",
+      "permalink": "https://data.colorado.gov/d/wnau-xrqi",
+      "row_count": null,
+      "type": "dataset",
+      "updatedAt": "2026-05-10T11:10:59.000Z"
+    },
+    {
+      "columns_field_name": [
+        "id",
+        "transaction_amount",
+        "program_area",
+        "purchase_type",
+        "reference_number",
+        "payment_date",
+        "transaction_date",
+        "merchant",
+        "purchase_amount",
+        "item_description",
+        "year",
+        "merchant_state"
+      ],
+      "createdAt": "2022-03-30T20:23:32.000Z",
+      "description": "These datasets include accounts payable payments and procurement card transactions made to vendors by the City and County of Denver for the current year to date and previous years. The datasets are refreshed each day with the previous business day's transactions. New travel datasets cannot be provided from August 2017 due to confidentiality concerns however, historic travel datasets will be mainta",
+      "domain": "data.colorado.gov",
+      "id": "66zf-qjdd",
+      "name": "City of Denver Procurement Transactions",
+      "permalink": "https://data.colorado.gov/d/66zf-qjdd",
+      "row_count": null,
+      "type": "dataset",
+      "updatedAt": "2026-05-10T11:10:59.000Z"
+    }
+  ],
+  "n_hits_filtered": 2,
+  "n_hits_total": 2,
+  "queries": [
+    {
+      "extra": "domains=data.colorado.gov",
+      "q": "denver+checkbook"
+    },
+    {
+      "extra": "",
+      "q": "denver+checkbook"
+    },
+    {
+      "extra": "domains=data.colorado.gov",
+      "q": "denver+payment"
+    },
+    {
+      "extra": "domains=data.colorado.gov",
+      "q": "city+denver+expenditure"
+    }
+  ]
+}
