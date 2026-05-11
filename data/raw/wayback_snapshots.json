@@ -1,6 +1,87 @@
 {
   "by_target_year": {},
-  "fetched_at": "2026-05-11T04:46:56.704006+00:00",
+  "diagnostics": [
+    {
+      "cdx": "https://web.archive.org/cdx/search/cdx?url=google.com&from=20200101&to=20260601&output=json&matchType=exact&limit=20",
+      "error": "TimeoutError('The read operation timed out')",
+      "kind": "sanity-check",
+      "matchType": "exact",
+      "url": "google.com"
+    },
+    {
+      "body_head": "[]\n",
+      "body_len": 3,
+      "cdx": "https://web.archive.org/cdx/search/cdx?url=data.colorado.gov/resource/wnau-xrqi.json&from=20200101&to=20260601&output=json&matchType=prefix&limit=20",
+      "http_status": 200,
+      "kind": "denver",
+      "matchType": "prefix",
+      "n_rows": 0,
+      "url": "data.colorado.gov/resource/wnau-xrqi.json"
+    },
+    {
+      "body_head": "[]\n",
+      "body_len": 3,
+      "cdx": "https://web.archive.org/cdx/search/cdx?url=data.colorado.gov/api/views/wnau-xrqi/rows.csv&from=20200101&to=20260601&output=json&matchType=prefix&limit=20",
+      "http_status": 200,
+      "kind": "denver",
+      "matchType": "prefix",
+      "n_rows": 0,
+      "url": "data.colorado.gov/api/views/wnau-xrqi/rows.csv"
+    },
+    {
+      "cdx": "https://web.archive.org/cdx/search/cdx?url=data.colorado.gov/resource/wnau-xrqi.csv&from=20200101&to=20260601&output=json&matchType=prefix&limit=20",
+      "error": "<HTTPError 503: 'Service Unavailable'>",
+      "kind": "denver",
+      "matchType": "prefix",
+      "url": "data.colorado.gov/resource/wnau-xrqi.csv"
+    },
+    {
+      "body_head": "[]\n",
+      "body_len": 3,
+      "cdx": "https://web.archive.org/cdx/search/cdx?url=data.colorado.gov/d/wnau-xrqi&from=20200101&to=20260601&output=json&matchType=prefix&limit=20",
+      "http_status": 200,
+      "kind": "denver",
+      "matchType": "prefix",
+      "n_rows": 0,
+      "url": "data.colorado.gov/d/wnau-xrqi"
+    },
+    {
+      "cdx": "https://web.archive.org/cdx/search/cdx?url=data.colorado.gov/Business/City-of-Denver-Checkbook&from=20200101&to=20260601&output=json&matchType=prefix&limit=20",
+      "error": "URLError(TimeoutError('timed out'))",
+      "kind": "denver",
+      "matchType": "prefix",
+      "url": "data.colorado.gov/Business/City-of-Denver-Checkbook"
+    },
+    {
+      "cdx": "https://web.archive.org/cdx/search/cdx?url=data.colorado.gov/resource/66zf-qjdd.json&from=20200101&to=20260601&output=json&matchType=prefix&limit=20",
+      "error": "URLError(TimeoutError('timed out'))",
+      "kind": "denver",
+      "matchType": "prefix",
+      "url": "data.colorado.gov/resource/66zf-qjdd.json"
+    },
+    {
+      "cdx": "https://web.archive.org/cdx/search/cdx?url=denvergov.org/transparency/checkbook&from=20200101&to=20260601&output=json&matchType=exact&limit=20",
+      "error": "URLError(TimeoutError('timed out'))",
+      "kind": "denver",
+      "matchType": "exact",
+      "url": "denvergov.org/transparency/checkbook"
+    },
+    {
+      "cdx": "https://web.archive.org/cdx/search/cdx?url=denvergov.org/content/denvergov/en/transparent-denver/checkbook&from=20200101&to=20260601&output=json&matchType=prefix&limit=20",
+      "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))",
+      "kind": "denver",
+      "matchType": "prefix",
+      "url": "denvergov.org/content/denvergov/en/transparent-denver/checkbook"
+    },
+    {
+      "cdx": "https://web.archive.org/cdx/search/cdx?url=denvergov.org/opendata&from=20200101&to=20260601&output=json&matchType=prefix&limit=20",
+      "error": "TimeoutError('The read operation timed out')",
+      "kind": "denver",
+      "matchType": "prefix",
+      "url": "denvergov.org/opendata"
+    }
+  ],
+  "fetched_at": "2026-05-11T04:52:31.246933+00:00",
   "n_snapshots_total": 0,
   "snapshots": []
 }

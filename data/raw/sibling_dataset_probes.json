@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-11T04:44:54.311178+00:00",
+  "fetched_at": "2026-05-11T04:48:33.805929+00:00",
   "probes": [
     {
       "amount_field": "amount",
@@ -8,7 +8,7 @@
       "dataset_id": "wnau-xrqi",
       "date_field": "paymentdate",
       "endpoint": "https://data.colorado.gov/resource/wnau-xrqi.json",
-      "fetched_at": "2026-05-11T04:44:53.787157+00:00",
+      "fetched_at": "2026-05-11T04:48:33.081715+00:00",
       "label": "data.colorado.gov/wnau-xrqi \u2014 City of Denver Checkbook",
       "max_date": "2025-12-30T00:00:00.000",
       "min_date": "2025-01-02T00:00:00.000",
@@ -29,7 +29,7 @@
       "dataset_id": "66zf-qjdd",
       "date_field": "payment_date",
       "endpoint": "https://data.colorado.gov/resource/66zf-qjdd.json",
-      "fetched_at": "2026-05-11T04:44:54.311074+00:00",
+      "fetched_at": "2026-05-11T04:48:33.805790+00:00",
       "label": "data.colorado.gov/66zf-qjdd \u2014 City of Denver Procurement Transactions",
       "max_date": "2025-12-02-08:00",
       "min_date": "2025-02-03-08:00",
