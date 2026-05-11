@@ -2,11 +2,12 @@
 Phase 0 / pre-Phase-1 scan tool.
 
 Probes the live Denver Checkbook dataset and writes its findings to disk so
-that Phase 1 can rely on a verified column map instead of guessing. Three
-modes:
+that Phase 1 can rely on a verified column map instead of guessing. Modes:
 
     --columns          Discover real column names and write
                        data/raw/checkbook_columns.json
+    --date-range       Min/max paymentdate + per-year counts; write
+                       data/raw/checkbook_date_range.json
     --sample           Dump the first N rows as JSON
     --vendor-counts    Top vendors + seed match summary
     --new-candidates   Curator-loop output: top unmatched vendors → CSV in
@@ -14,6 +15,7 @@ modes:
 
 Usage examples:
     python -m etl.sources.denver_checkbook.scan --columns
+    python -m etl.sources.denver_checkbook.scan --date-range
     python -m etl.sources.denver_checkbook.scan --vendor-counts --rows 5000
     python -m etl.sources.denver_checkbook.scan --new-candidates --rows 20000
 
@@ -69,6 +71,7 @@ DATE_FIELD_CANDIDATES = [
 
 # Where we persist artifacts. Paths are relative to the repo root.
 COLUMNS_OUT = Path("data/raw/checkbook_columns.json")
+DATE_RANGE_OUT = Path("data/raw/checkbook_date_range.json")
 NEW_CANDIDATES_DIR = Path("data/interim")
 
 
@@ -203,6 +206,85 @@ def cmd_vendor_counts(client: SocrataClient, rows: int) -> None:
         print(f"  {n:6d}  ${matched_totals[canon]:14,.2f}  {canon}")
 
 
+def cmd_date_range(client: SocrataClient) -> None:
+    """Query dataset-wide min/max paymentdate plus per-year counts and totals.
+
+    This answers two questions: (1) what is the dataset's actual date span,
+    and (2) what does the year-by-year distribution look like — useful for
+    diagnosing 'why is only year X in our DB?' issues.
+
+    Uses SoQL aggregates so we never page through real rows.
+    """
+    cols = client.columns()
+    date_field = discover_field(cols, DATE_FIELD_CANDIDATES)
+    amount_field = discover_field(cols, AMOUNT_FIELD_CANDIDATES)
+    if not date_field:
+        print("ERROR: no date column found.", file=sys.stderr)
+        sys.exit(2)
+    print(f"Querying min/max {date_field} and per-year aggregate...")
+
+    # 1) overall min/max + total row count
+    overall = list(
+        client.query(
+            select=(
+                f"min({date_field}) AS min_date, "
+                f"max({date_field}) AS max_date, "
+                f"count(*) AS n_total"
+                + (f", sum({amount_field}) AS sum_total" if amount_field else "")
+            ),
+            limit=1,
+            max_rows=1,
+        )
+    )
+    overall_row = overall[0] if overall else {}
+    min_date = overall_row.get("min_date")
+    max_date = overall_row.get("max_date")
+    n_total = int(overall_row.get("n_total") or 0)
+    sum_total = float(overall_row.get("sum_total") or 0) if amount_field else None
+
+    # 2) per-year counts. Socrata's date_extract_y on calendar_date returns year as int.
+    year_expr = f"date_extract_y({date_field})"
+    per_year_rows = list(
+        client.query(
+            select=(
+                f"{year_expr} AS year, count(*) AS n"
+                + (f", sum({amount_field}) AS amount" if amount_field else "")
+            ),
+            where=f"{date_field} IS NOT NULL",
+            order="year ASC",
+            limit=200,
+            max_rows=200,
+        )
+    )
+    per_year = [
+        {
+            "year": str(int(float(r["year"]))) if r.get("year") is not None else "unknown",
+            "n_payments": int(r.get("n") or 0),
+            "total": float(r.get("amount") or 0) if amount_field else None,
+        }
+        for r in per_year_rows
+    ]
+
+    payload = {
+        "endpoint": client.dataset.resource_url,
+        "dataset_id": client.dataset.dataset_id,
+        "fetched_at": dt.datetime.now(tz=dt.timezone.utc).isoformat(),
+        "min_date": min_date,
+        "max_date": max_date,
+        "n_total_rows": n_total,
+        "sum_total": sum_total,
+        "per_year": per_year,
+    }
+    DATE_RANGE_OUT.parent.mkdir(parents=True, exist_ok=True)
+    DATE_RANGE_OUT.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+    print(f"Wrote {DATE_RANGE_OUT}")
+    print(f"min_date={min_date}  max_date={max_date}  n_total={n_total:,}")
+    print("Per-year counts:")
+    for r in per_year:
+        amt = f"  ${r['total']:14,.0f}" if r.get("total") is not None else ""
+        print(f"  {r['year']}: {r['n_payments']:7,d}{amt}")
+
+
 def cmd_new_candidates(client: SocrataClient, rows: int, top: int = 200) -> None:
     """Write the top unmatched vendors to a CSV for human review.
 
@@ -236,6 +318,8 @@ def cmd_new_candidates(client: SocrataClient, rows: int, top: int = 200) -> None
 def main(argv: Iterable[str] | None = None) -> int:
     p = argparse.ArgumentParser(description="Denver Checkbook scan / probe")
     p.add_argument("--columns", action="store_true", help="Discover and persist column map")
+    p.add_argument("--date-range", action="store_true",
+                   help="Persist dataset min/max paymentdate and per-year counts")
     p.add_argument("--sample", action="store_true", help="Print a sample row dump")
     p.add_argument("--vendor-counts", action="store_true", help="Top vendors + seed match summary")
     p.add_argument("--new-candidates", action="store_true",
@@ -250,6 +334,9 @@ def main(argv: Iterable[str] | None = None) -> int:
 
     if args.columns:
         cmd_columns(client)
+        return 0
+    if args.date_range:
+        cmd_date_range(client)
         return 0
     if args.sample:
         cmd_sample(client, args.rows)
