@@ -24,6 +24,8 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  # Needed for the gh-api step that creates/updates the Pages site config.
+  administration: write
 
 concurrency:
   group: pages
@@ -48,10 +50,31 @@ jobs:
           cache: "npm"
           cache-dependency-path: web/package-lock.json
 
+      # Force-enable Pages with GitHub Actions as the source. configure-pages
+      # with enablement: true was logging success but Pages stayed "off" for
+      # this repo (no default branch named main → some implicit assumption
+      # somewhere). This explicit API call is idempotent: PUT updates if
+      # Pages exists, POST creates if it doesn't.
+      - name: Force-enable GitHub Pages (Actions source)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          if gh api "repos/${{ github.repository }}/pages" >/dev/null 2>&1; then
+            echo "Pages config exists — updating build_type=workflow"
+            gh api "repos/${{ github.repository }}/pages" -X PUT \
+              -f build_type=workflow
+          else
+            echo "Pages config missing — creating with build_type=workflow"
+            gh api "repos/${{ github.repository }}/pages" -X POST \
+              -f build_type=workflow
+          fi
+          echo "Current Pages config:"
+          gh api "repos/${{ github.repository }}/pages"
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
-          # Auto-enable Pages on first run.
           enablement: true
           static_site_generator: next
 
