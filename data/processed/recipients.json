@@ -1,9 +1,11 @@
 {
   "meta": {
-    "generated_at": "2026-05-11T01:48:35.536403+00:00",
-    "last_checkbook_fetch_at": "2026-05-11T01:48:35.451649+00:00",
-    "n_payments": 1841,
-    "n_recipients": 21
+    "generated_at": "2026-05-11T02:24:14.524534+00:00",
+    "last_checkbook_fetch_at": "2026-05-11T02:24:14.436583+00:00",
+    "n_payments": 2128,
+    "n_recipients": 23,
+    "n_seeds": 30,
+    "n_seeds_matched": 23
   },
   "recipients": [
     {
@@ -11,7 +13,7 @@
         "2025": 28601801.25
       },
       "first_payment_date": "2025-01-02",
-      "id": 7,
+      "id": 8,
       "last_payment_date": "2025-12-29",
       "legal_name": "The Salvation Army",
       "n_payments": 323,
@@ -89,7 +91,7 @@
         "2025": 11381424.53
       },
       "first_payment_date": "2025-01-15",
-      "id": 6,
+      "id": 7,
       "last_payment_date": "2025-12-17",
       "legal_name": "Denver Rescue Mission",
       "n_payments": 56,
@@ -116,7 +118,7 @@
         "2025": 10464547.52
       },
       "first_payment_date": "2025-01-08",
-      "id": 9,
+      "id": 10,
       "last_payment_date": "2025-12-30",
       "legal_name": "WellPower (Mental Health Center of Denver)",
       "n_payments": 77,
@@ -155,7 +157,7 @@
         "2025": 9903453.6
       },
       "first_payment_date": "2025-01-03",
-      "id": 3,
+      "id": 4,
       "last_payment_date": "2025-12-19",
       "legal_name": "Catholic Charities of Denver",
       "n_payments": 158,
@@ -194,7 +196,7 @@
         "2025": 8541000.0
       },
       "first_payment_date": "2025-06-05",
-      "id": 17,
+      "id": 18,
       "last_payment_date": "2025-08-15",
       "legal_name": "Mercy Housing Mountain Plains",
       "n_payments": 5,
@@ -268,7 +270,7 @@
         "2025": 7151307.9
       },
       "first_payment_date": "2025-01-16",
-      "id": 8,
+      "id": 9,
       "last_payment_date": "2025-12-29",
       "legal_name": "Brothers Redevelopment, Inc.",
       "n_payments": 100,
@@ -307,7 +309,7 @@
         "2025": 6910757.12
       },
       "first_payment_date": "2025-01-02",
-      "id": 4,
+      "id": 5,
       "last_payment_date": "2025-12-18",
       "legal_name": "Bayaud Enterprises",
       "n_payments": 149,
@@ -343,10 +345,88 @@
     },
     {
       "by_year": {
+        "2025": 5826110.32
+      },
+      "first_payment_date": "2025-01-15",
+      "id": 3,
+      "last_payment_date": "2025-12-29",
+      "legal_name": "St. Francis Center",
+      "n_payments": 118,
+      "top_departments": [
+        {
+          "amount": 4267814.63,
+          "name": "Department of Housing Stability (HOST)"
+        },
+        {
+          "amount": 1512401.21,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 45894.48,
+          "name": "Service Delivery and Administration"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 4267814.63,
+          "name": "General Fund"
+        },
+        {
+          "amount": 1361677.53,
+          "name": "Homelessness Resolution"
+        },
+        {
+          "amount": 134473.3,
+          "name": "Continuum of Care"
+        }
+      ],
+      "total_paid": 5826110.32
+    },
+    {
+      "by_year": {
+        "2025": 4234079.8
+      },
+      "first_payment_date": "2025-01-03",
+      "id": 23,
+      "last_payment_date": "2025-12-30",
+      "legal_name": "Tiny Homes / Beloved Community Village (operator)",
+      "n_payments": 169,
+      "top_departments": [
+        {
+          "amount": 2489077.19,
+          "name": "Department of Housing Stability (HOST)"
+        },
+        {
+          "amount": 1591315.44,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 137716.82,
+          "name": "Denver Department of Public Health and E"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 2489077.19,
+          "name": "General Fund"
+        },
+        {
+          "amount": 933602.54,
+          "name": "American Rescue Plan Act"
+        },
+        {
+          "amount": 657712.9,
+          "name": "Homelessness Resolution"
+        }
+      ],
+      "total_paid": 4234079.8
+    },
+    {
+      "by_year": {
         "2025": 4218777.11
       },
       "first_payment_date": "2025-01-07",
-      "id": 19,
+      "id": 20,
       "last_payment_date": "2025-12-22",
       "legal_name": "Servicios de la Raza",
       "n_payments": 88,
@@ -385,7 +465,7 @@
         "2025": 3873996.28
       },
       "first_payment_date": "2025-01-03",
-      "id": 5,
+      "id": 6,
       "last_payment_date": "2025-12-30",
       "legal_name": "Urban Peak",
       "n_payments": 165,
@@ -424,7 +504,7 @@
         "2025": 1997666.83
       },
       "first_payment_date": "2025-01-10",
-      "id": 10,
+      "id": 11,
       "last_payment_date": "2025-12-22",
       "legal_name": "The Gathering Place",
       "n_payments": 58,
@@ -463,7 +543,7 @@
         "2025": 1494420.23
       },
       "first_payment_date": "2025-01-16",
-      "id": 18,
+      "id": 19,
       "last_payment_date": "2025-12-17",
       "legal_name": "The Empowerment Program",
       "n_payments": 93,
@@ -502,7 +582,7 @@
         "2025": 1371354.03
       },
       "first_payment_date": "2025-01-10",
-      "id": 13,
+      "id": 14,
       "last_payment_date": "2025-12-30",
       "legal_name": "Delores Project",
       "n_payments": 79,
@@ -541,7 +621,7 @@
         "2025": 460449.77
       },
       "first_payment_date": "2025-02-07",
-      "id": 20,
+      "id": 21,
       "last_payment_date": "2025-12-04",
       "legal_name": "Denver Inner City Parish",
       "n_payments": 23,
@@ -576,7 +656,7 @@
         "2025": 196506.96
       },
       "first_payment_date": "2025-01-14",
-      "id": 14,
+      "id": 15,
       "last_payment_date": "2025-11-14",
       "legal_name": "Family Promise of Greater Denver",
       "n_payments": 31,
@@ -607,7 +687,7 @@
         "2025": 147280.04
       },
       "first_payment_date": "2025-01-30",
-      "id": 12,
+      "id": 13,
       "last_payment_date": "2025-12-17",
       "legal_name": "Senior Support Services",
       "n_payments": 20,
@@ -642,7 +722,7 @@
         "2025": 44813.31
       },
       "first_payment_date": "2025-02-10",
-      "id": 21,
+      "id": 22,
       "last_payment_date": "2025-07-31",
       "legal_name": "Stride Community Health Center",
       "n_payments": 9,
@@ -665,7 +745,7 @@
         "2025": 5000.0
       },
       "first_payment_date": "2025-12-18",
-      "id": 11,
+      "id": 12,
       "last_payment_date": "2025-12-18",
       "legal_name": "Denver Indian Health and Family Services",
       "n_payments": 1,
@@ -688,7 +768,7 @@
         "2025": 4583.36
       },
       "first_payment_date": "2025-01-30",
-      "id": 15,
+      "id": 16,
       "last_payment_date": "2025-06-09",
       "legal_name": "Florence Crittenton Services of Colorado",
       "n_payments": 2,
@@ -719,7 +799,7 @@
         "2025": 1000.0
       },
       "first_payment_date": "2025-06-10",
-      "id": 16,
+      "id": 17,
       "last_payment_date": "2025-06-10",
       "legal_name": "Hope Communities, Inc.",
       "n_payments": 1,
@@ -736,6 +816,248 @@
         }
       ],
       "total_paid": 1000.0
+    }
+  ],
+  "seeds": [
+    {
+      "canonical": "Colorado Coalition for the Homeless",
+      "distinctive": "coalition for the homeless",
+      "matched": true,
+      "n_payments": 224,
+      "notes": "Largest single recipient historically; runs Stout Street, PSH portfolio.",
+      "total_paid": 15170818.06
+    },
+    {
+      "canonical": "Volunteers of America Colorado",
+      "distinctive": "volunteers of america",
+      "matched": true,
+      "n_payments": 179,
+      "notes": "Family shelter, women's shelter, 48th Ave bridge housing.",
+      "total_paid": 7703997.63
+    },
+    {
+      "canonical": "St. Francis Center",
+      "distinctive": "st. francis center",
+      "matched": true,
+      "n_payments": 118,
+      "notes": "Day shelter and employment services.",
+      "total_paid": 5826110.32
+    },
+    {
+      "canonical": "Catholic Charities of Denver",
+      "distinctive": "catholic charities",
+      "matched": true,
+      "n_payments": 158,
+      "notes": "Operates Samaritan House emergency shelter.",
+      "total_paid": 9903453.6
+    },
+    {
+      "canonical": "Bayaud Enterprises",
+      "distinctive": "bayaud",
+      "matched": true,
+      "n_payments": 149,
+      "notes": "Vocational rehab + day services.",
+      "total_paid": 6910757.12
+    },
+    {
+      "canonical": "Mile High Behavioral Healthcare",
+      "distinctive": "mile high behavioral",
+      "matched": false,
+      "n_payments": 0,
+      "notes": "Behavioral health + shelter operations.",
+      "total_paid": 0.0
+    },
+    {
+      "canonical": "Urban Peak",
+      "distinctive": "urban peak",
+      "matched": true,
+      "n_payments": 165,
+      "notes": "Youth-specific homelessness services.",
+      "total_paid": 3873996.28
+    },
+    {
+      "canonical": "Denver Rescue Mission",
+      "distinctive": "denver rescue mission",
+      "matched": true,
+      "n_payments": 56,
+      "notes": "Lawrence Street shelter, Crossing.",
+      "total_paid": 11381424.53
+    },
+    {
+      "canonical": "The Salvation Army",
+      "distinctive": "salvation army",
+      "matched": true,
+      "n_payments": 323,
+      "notes": "Operates Crossroads shelter for the city.",
+      "total_paid": 28601801.25
+    },
+    {
+      "canonical": "Brothers Redevelopment, Inc.",
+      "distinctive": "brothers redevelopment",
+      "matched": true,
+      "n_payments": 100,
+      "notes": "Eviction prevention, housing counseling.",
+      "total_paid": 7151307.9
+    },
+    {
+      "canonical": "WellPower (Mental Health Center of Denver)",
+      "distinctive": "wellpower",
+      "matched": true,
+      "n_payments": 77,
+      "notes": "Re-branded from MHCD; behavioral health partner.",
+      "total_paid": 10464547.52
+    },
+    {
+      "canonical": "The Gathering Place",
+      "distinctive": "gathering place",
+      "matched": true,
+      "n_payments": 58,
+      "notes": "Day shelter for women, children, transgender individuals.",
+      "total_paid": 1997666.83
+    },
+    {
+      "canonical": "Denver Housing Authority",
+      "distinctive": "denver housing authority",
+      "matched": false,
+      "n_payments": 0,
+      "notes": "Quasi-public; receives city pass-through for PSH and vouchers.",
+      "total_paid": 0.0
+    },
+    {
+      "canonical": "Metro Denver Homeless Initiative",
+      "distinctive": "metro denver homeless",
+      "matched": false,
+      "n_payments": 0,
+      "notes": "HUD-designated CoC; runs HMIS and PIT count.",
+      "total_paid": 0.0
+    },
+    {
+      "canonical": "Denver Indian Health and Family Services",
+      "distinctive": "denver indian health",
+      "matched": true,
+      "n_payments": 1,
+      "notes": "Culturally-specific services for AI/AN community.",
+      "total_paid": 5000.0
+    },
+    {
+      "canonical": "Senior Support Services",
+      "distinctive": "senior support services",
+      "matched": true,
+      "n_payments": 20,
+      "notes": "Older-adult-focused day services.",
+      "total_paid": 147280.04
+    },
+    {
+      "canonical": "Delores Project",
+      "distinctive": "delores project",
+      "matched": true,
+      "n_payments": 79,
+      "notes": "Shelter for unaccompanied women and transgender individuals.",
+      "total_paid": 1371354.03
+    },
+    {
+      "canonical": "Family Promise of Greater Denver",
+      "distinctive": "family promise",
+      "matched": true,
+      "n_payments": 31,
+      "notes": "Family shelter network.",
+      "total_paid": 196506.96
+    },
+    {
+      "canonical": "Florence Crittenton Services of Colorado",
+      "distinctive": "florence crittenton",
+      "matched": true,
+      "n_payments": 2,
+      "notes": "Teen-parent supports including housing.",
+      "total_paid": 4583.36
+    },
+    {
+      "canonical": "Hope Communities, Inc.",
+      "distinctive": "hope communities",
+      "matched": true,
+      "n_payments": 1,
+      "notes": "Affordable housing developer + supportive services.",
+      "total_paid": 1000.0
+    },
+    {
+      "canonical": "Mercy Housing Mountain Plains",
+      "distinctive": "mercy housing",
+      "matched": true,
+      "n_payments": 5,
+      "notes": "Affordable housing developer with supportive housing portfolio.",
+      "total_paid": 8541000.0
+    },
+    {
+      "canonical": "The Empowerment Program",
+      "distinctive": "empowerment program",
+      "matched": true,
+      "n_payments": 93,
+      "notes": "Re-entry and housing for women.",
+      "total_paid": 1494420.23
+    },
+    {
+      "canonical": "Servicios de la Raza",
+      "distinctive": "servicios de la raza",
+      "matched": true,
+      "n_payments": 88,
+      "notes": "Latino-focused supports including housing navigation.",
+      "total_paid": 4218777.11
+    },
+    {
+      "canonical": "Denver Inner City Parish",
+      "distinctive": "denver inner city parish",
+      "matched": true,
+      "n_payments": 23,
+      "notes": "Direct services in west Denver.",
+      "total_paid": 460449.77
+    },
+    {
+      "canonical": "Volunteers of America National (capital partner)",
+      "distinctive": "voa national",
+      "matched": false,
+      "n_payments": 0,
+      "notes": "Capital partner for some PSH developments; flag and verify.",
+      "total_paid": 0.0
+    },
+    {
+      "canonical": "Saint Francis Apartments / Saint Francis Center Housing",
+      "distinctive": "saint francis apartments",
+      "matched": false,
+      "n_payments": 0,
+      "notes": "PSH operating arm of St. Francis Center.",
+      "total_paid": 0.0
+    },
+    {
+      "canonical": "Denver Basic Income Project",
+      "distinctive": "basic income project",
+      "matched": false,
+      "n_payments": 0,
+      "notes": "Direct cash transfer pilot for unhoused residents.",
+      "total_paid": 0.0
+    },
+    {
+      "canonical": "Stride Community Health Center",
+      "distinctive": "stride community health",
+      "matched": true,
+      "n_payments": 9,
+      "notes": "Healthcare for the homeless partner.",
+      "total_paid": 44813.31
+    },
+    {
+      "canonical": "Cross Purpose",
+      "distinctive": "cross purpose",
+      "matched": false,
+      "n_payments": 0,
+      "notes": "Workforce + economic mobility, not strictly homelessness; flag.",
+      "total_paid": 0.0
+    },
+    {
+      "canonical": "Tiny Homes / Beloved Community Village (operator)",
+      "distinctive": "beloved community village",
+      "matched": true,
+      "n_payments": 169,
+      "notes": "Operator: Colorado Village Collaborative \u2014 tiny-home villages.",
+      "total_paid": 4234079.8
     }
   ]
 }
