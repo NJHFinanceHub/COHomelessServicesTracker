@@ -9,6 +9,15 @@ on:
     branches:
       - main
       - 'claude/**'
+  # Also re-deploy after each successful ETL run so bot data-refresh commits
+  # (which use GITHUB_TOKEN and don't fire downstream workflows directly)
+  # still update the live site.
+  workflow_run:
+    workflows: ["ETL nightly"]
+    types: [completed]
+    branches:
+      - main
+      - 'claude/**'
   workflow_dispatch:
 
 permissions:
@@ -23,8 +32,15 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # If triggered by workflow_run, only deploy when the upstream ETL succeeded.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     steps:
+      # On workflow_run we want the latest branch HEAD (the ETL bot just
+      # pushed data commits on top of the trigger SHA), not the SHA that
+      # originally fired the upstream workflow.
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_branch || github.ref }}
 
       - uses: actions/setup-node@v4
         with:
