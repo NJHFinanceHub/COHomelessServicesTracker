@@ -103,12 +103,29 @@ export default function Home() {
       {byYear.length > 0 && (
         <>
           <h2>Annual spend, year over year</h2>
-          <p>
-            Total dollars attributed to homelessness-related nonprofits each
-            calendar year. ARPA-funded years (2021–2024) and one-time
-            voter-approved measure spending typically drive the spikes;
-            general-fund baselines drive the steady portion.
-          </p>
+          {byYear.length === 1 ? (
+            <p
+              style={{
+                borderLeft: "3px solid #b45309",
+                paddingLeft: 12,
+                color: "#57534e",
+              }}
+            >
+              <strong>Single-year coverage.</strong> The Denver Open Checkbook
+              dataset (<code>wnau-xrqi</code>) is current-calendar-year only:
+              it rolls over every January, so today it holds <em>only</em>{" "}
+              {byYear[0].year} payments. We&rsquo;ve confirmed this against the
+              dataset directly &mdash; see{" "}
+              <Link href="/data/">data status</Link> for the evidence and a
+              list of candidate historical sources we&rsquo;re investigating
+              next.
+            </p>
+          ) : (
+            <p>
+              Total dollars attributed to homelessness-related nonprofits each
+              calendar year.
+            </p>
+          )}
           <VBar
             items={byYear.map((y) => ({ label: y.year, value: y.total }))}
             formatter={fmtUSDCompact}

@@ -72,6 +72,7 @@ DATE_FIELD_CANDIDATES = [
 # Where we persist artifacts. Paths are relative to the repo root.
 COLUMNS_OUT = Path("data/raw/checkbook_columns.json")
 DATE_RANGE_OUT = Path("data/raw/checkbook_date_range.json")
+CATALOG_OUT = Path("data/raw/socrata_catalog_denver_checkbook.json")
 NEW_CANDIDATES_DIR = Path("data/interim")
 
 
@@ -287,6 +288,90 @@ def cmd_date_range(client: SocrataClient) -> None:
         print(f"  {r['year']}: {r['n_payments']:7,d}{amt}")
 
 
+def cmd_catalog_search() -> None:
+    """Search Socrata's Discovery API for Denver-checkbook-related datasets.
+
+    The known production dataset (wnau-xrqi) is current-year-only; finding
+    sibling/archive datasets is the way to get prior-year data. The Discovery
+    API at api.us.socrata.com lists all public datasets across all domains
+    and supports search by name/keywords.
+    """
+    import urllib.parse
+    import urllib.request
+
+    queries = [
+        ("denver+checkbook", "domains=data.colorado.gov"),
+        ("denver+checkbook", ""),
+        ("denver+payment", "domains=data.colorado.gov"),
+        ("city+denver+expenditure", "domains=data.colorado.gov"),
+    ]
+    aggregated: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+    for q, extra in queries:
+        url = f"https://api.us.socrata.com/api/catalog/v1?q={q}&{extra}&limit=50" if extra else f"https://api.us.socrata.com/api/catalog/v1?q={q}&limit=50"
+        print(f"GET {url}")
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "denver-tracker/0.1"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+        except Exception as e:
+            print(f"  failed: {e}")
+            continue
+        for hit in data.get("results", []):
+            res = hit.get("resource", {})
+            rid = res.get("id")
+            if not rid or rid in seen_ids:
+                continue
+            seen_ids.add(rid)
+            aggregated.append(
+                {
+                    "id": rid,
+                    "name": res.get("name"),
+                    "description": (res.get("description") or "").strip()[:400],
+                    "domain": hit.get("metadata", {}).get("domain"),
+                    "type": res.get("type"),
+                    "updatedAt": res.get("updatedAt"),
+                    "createdAt": res.get("createdAt"),
+                    "columns_field_name": res.get("columns_field_name", []),
+                    "row_count": res.get("rows_updated_at"),
+                    "permalink": hit.get("permalink"),
+                }
+            )
+
+    # Filter to anything that looks payment/expenditure/checkbook-related.
+    def relevant(d: dict) -> bool:
+        text = " ".join(
+            str(d.get(k, "")).lower() for k in ("name", "description")
+        )
+        return any(
+            kw in text
+            for kw in (
+                "checkbook",
+                "payment",
+                "expenditure",
+                "spending",
+                "vendor",
+                "payee",
+            )
+        )
+
+    filtered = [d for d in aggregated if relevant(d)]
+    filtered.sort(key=lambda d: (d.get("domain") != "data.colorado.gov", d.get("name") or ""))
+
+    payload = {
+        "fetched_at": dt.datetime.now(tz=dt.timezone.utc).isoformat(),
+        "queries": [{"q": q, "extra": extra} for q, extra in queries],
+        "n_hits_total": len(aggregated),
+        "n_hits_filtered": len(filtered),
+        "hits": filtered,
+    }
+    CATALOG_OUT.parent.mkdir(parents=True, exist_ok=True)
+    CATALOG_OUT.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+    print(f"Wrote {CATALOG_OUT} ({len(filtered)} relevant datasets)")
+    for d in filtered[:30]:
+        print(f"  {d['id']:14s}  {d.get('domain','?'):30s}  {d.get('name','')}")
+
+
 def cmd_new_candidates(client: SocrataClient, rows: int, top: int = 200) -> None:
     """Write the top unmatched vendors to a CSV for human review.
 
@@ -322,6 +407,8 @@ def main(argv: Iterable[str] | None = None) -> int:
     p.add_argument("--columns", action="store_true", help="Discover and persist column map")
     p.add_argument("--date-range", action="store_true",
                    help="Persist dataset min/max paymentdate and per-year counts")
+    p.add_argument("--catalog-search", action="store_true",
+                   help="Search Socrata's Discovery API for sibling Denver checkbook datasets")
     p.add_argument("--sample", action="store_true", help="Print a sample row dump")
     p.add_argument("--vendor-counts", action="store_true", help="Top vendors + seed match summary")
     p.add_argument("--new-candidates", action="store_true",
@@ -339,6 +426,9 @@ def main(argv: Iterable[str] | None = None) -> int:
         return 0
     if args.date_range:
         cmd_date_range(client)
+        return 0
+    if args.catalog_search:
+        cmd_catalog_search()
         return 0
     if args.sample:
         cmd_sample(client, args.rows)

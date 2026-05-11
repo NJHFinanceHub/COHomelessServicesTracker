@@ -19,12 +19,29 @@ export default function YearsPage() {
   return (
     <article className="prose-civic">
       <h1>Annual spend</h1>
+      {sorted.length === 1 && (
+        <p
+          style={{
+            borderLeft: "3px solid #b45309",
+            paddingLeft: 12,
+            color: "#57534e",
+          }}
+        >
+          <strong>Single-year coverage.</strong> The Denver Open Checkbook
+          dataset (Socrata id <code>wnau-xrqi</code>) is current-calendar-year
+          only &mdash; it rolls over every January and retains the present
+          year&rsquo;s payments. Hence one bar. We&rsquo;ve confirmed this by
+          aggregate-querying the dataset; see{" "}
+          <a href="/data/">data status</a> for the evidence and a list of
+          candidate historical sources.
+        </p>
+      )}
       <p>
         Total dollars Denver paid to the seeded homelessness-related
-        nonprofits each calendar year. The shape of this curve is the
-        single most important contextual chart on the site &mdash; ARPA
-        pass-throughs, voter-approved measures, and one-time bond
-        proceeds all reshape it.
+        nonprofits each calendar year. When multi-year data is available the
+        shape of this curve will be the most important contextual chart on
+        the site &mdash; ARPA pass-throughs, voter-approved measures, and
+        one-time bond proceeds all reshape it.
       </p>
 
       <MetricGrid>
