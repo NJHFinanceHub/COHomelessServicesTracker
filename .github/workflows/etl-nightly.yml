@@ -57,11 +57,13 @@ jobs:
           python -m etl.sources.denver_checkbook.scan --date-range
           python -m etl.sources.denver_checkbook.scan --catalog-search
           python -m etl.sources.denver_checkbook.scan --probe-siblings
+          python -m etl.sources.denver_checkbook.scan --wayback-probe
           echo "--- probe artifacts preview ---"
           ls -la data/raw/
           head -40 data/raw/checkbook_date_range.json || true
           head -60 data/raw/socrata_catalog_denver_checkbook.json || true
           head -120 data/raw/sibling_dataset_probes.json || true
+          head -120 data/raw/wayback_snapshots.json || true
 
       - name: Commit probe artifacts if changed
         run: |
@@ -72,7 +74,8 @@ jobs:
             data/raw/checkbook_columns.json \
             data/raw/checkbook_date_range.json \
             data/raw/socrata_catalog_denver_checkbook.json \
-            data/raw/sibling_dataset_probes.json || true
+            data/raw/sibling_dataset_probes.json \
+            data/raw/wayback_snapshots.json || true
           git status --short
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh Denver checkbook probe artifacts [skip-etl]"

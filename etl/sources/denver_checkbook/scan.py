@@ -410,6 +410,92 @@ def cmd_date_range(client: SocrataClient) -> None:
         print(f"  {r['year']}: {r['n_payments']:7,d}{amt}")
 
 
+def cmd_wayback_probe() -> None:
+    """Query the Internet Archive Wayback Machine CDX API for snapshots of
+    the Denver Checkbook dataset endpoints. If they captured the CSV export
+    near a prior January, we can ingest historical years even though the
+    live API rolls over.
+
+    Writes data/raw/wayback_snapshots.json.
+    """
+    import urllib.parse
+    import urllib.request
+
+    targets = [
+        "data.colorado.gov/resource/wnau-xrqi.json",
+        "data.colorado.gov/api/views/wnau-xrqi/rows.csv",
+        "data.colorado.gov/resource/wnau-xrqi.csv",
+        # Same for procurement, in case it helps:
+        "data.colorado.gov/resource/66zf-qjdd.json",
+        # Denver's own city checkbook page may have downloadable historical data:
+        "denvergov.org/transparency/checkbook",
+    ]
+    all_snapshots = []
+    for url in targets:
+        cdx = (
+            "https://web.archive.org/cdx/search/cdx"
+            f"?url={urllib.parse.quote(url, safe='/:.&=?')}"
+            "&from=20200101&to=20260601"
+            "&output=json"
+            "&filter=statuscode:200"
+            "&limit=200"
+        )
+        print(f"GET {cdx}")
+        try:
+            req = urllib.request.Request(cdx, headers={"User-Agent": "denver-tracker/0.1"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                rows = json.loads(resp.read().decode("utf-8") or "[]")
+        except Exception as e:
+            print(f"  failed: {e}")
+            continue
+        # First row is the header (urlkey, timestamp, original, mimetype, statuscode, digest, length)
+        if not rows or len(rows) < 2:
+            print(f"  no snapshots for {url}")
+            continue
+        headers = rows[0]
+        for row in rows[1:]:
+            d = dict(zip(headers, row))
+            all_snapshots.append(
+                {
+                    "target": url,
+                    "timestamp": d.get("timestamp"),
+                    "original": d.get("original"),
+                    "mimetype": d.get("mimetype"),
+                    "statuscode": d.get("statuscode"),
+                    "length": int(d.get("length") or 0),
+                    "view_url": f"https://web.archive.org/web/{d.get('timestamp')}/{d.get('original')}",
+                }
+            )
+    # Summarize: count per-target per-year.
+    by_target_year: dict[str, dict[str, int]] = {}
+    for s in all_snapshots:
+        ts = s.get("timestamp") or ""
+        year = ts[:4] if len(ts) >= 4 else "unknown"
+        t = s.get("target") or "?"
+        by_target_year.setdefault(t, {}).setdefault(year, 0)
+        by_target_year[t][year] += 1
+
+    out = Path("data/raw/wayback_snapshots.json")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(
+        json.dumps(
+            {
+                "fetched_at": dt.datetime.now(tz=dt.timezone.utc).isoformat(),
+                "n_snapshots_total": len(all_snapshots),
+                "by_target_year": by_target_year,
+                "snapshots": all_snapshots,
+            },
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n"
+    )
+    print(f"Wrote {out}: {len(all_snapshots)} snapshots")
+    for t, years in by_target_year.items():
+        years_str = ", ".join(f"{y}:{n}" for y, n in sorted(years.items()))
+        print(f"  {t}  →  {years_str}")
+
+
 def cmd_catalog_search() -> None:
     """Search Socrata's Discovery API for Denver-checkbook-related datasets.
 
@@ -533,6 +619,8 @@ def main(argv: Iterable[str] | None = None) -> int:
                    help="Search Socrata's Discovery API for sibling Denver checkbook datasets")
     p.add_argument("--probe-siblings", action="store_true",
                    help="Probe date range of every catalog-hit dataset")
+    p.add_argument("--wayback-probe", action="store_true",
+                   help="Probe Internet Archive Wayback Machine for archived snapshots")
     p.add_argument("--sample", action="store_true", help="Print a sample row dump")
     p.add_argument("--vendor-counts", action="store_true", help="Top vendors + seed match summary")
     p.add_argument("--new-candidates", action="store_true",
@@ -556,6 +644,9 @@ def main(argv: Iterable[str] | None = None) -> int:
         return 0
     if args.probe_siblings:
         cmd_probe_sibling_datasets(client)
+        return 0
+    if args.wayback_probe:
+        cmd_wayback_probe()
         return 0
     if args.sample:
         cmd_sample(client, args.rows)
