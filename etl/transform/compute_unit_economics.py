@@ -169,6 +169,33 @@ def _aggregate_by_year(con: sqlite3.Connection) -> list[dict[str, Any]]:
     ]
 
 
+def _aggregate_by_month(con: sqlite3.Connection) -> list[dict[str, Any]]:
+    """Per-month aggregate. Useful when only one year of data is available —
+    surfaces seasonality and any obvious one-time payouts within the year."""
+    rows = con.execute(
+        """
+        SELECT substr(p.payment_date, 1, 7) AS year_month,
+               COUNT(p.id) AS n_payments,
+               COALESCE(SUM(p.amount), 0) AS total,
+               COUNT(DISTINCT p.recipient_id) AS n_recipients
+        FROM payment p
+        WHERE p.payment_date IS NOT NULL
+        GROUP BY year_month
+        ORDER BY year_month ASC
+        """
+    ).fetchall()
+    return [
+        {
+            "year_month": row[0],
+            "n_payments": int(row[1]),
+            "total": round(float(row[2]), 2),
+            "n_recipients": int(row[3]),
+        }
+        for row in rows
+        if row[0]
+    ]
+
+
 def _aggregate_by_department(con: sqlite3.Connection) -> list[dict[str, Any]]:
     rows = con.execute(
         """
@@ -328,6 +355,7 @@ def main(argv: list[str] | None = None) -> int:
         meta = _meta(con)
         recipients = _per_recipient_summary(con)
         by_year = _aggregate_by_year(con)
+        by_month = _aggregate_by_month(con)
         by_dept = _aggregate_by_department(con)
         by_funding = _aggregate_by_funding(con)
     finally:
@@ -343,6 +371,7 @@ def main(argv: list[str] | None = None) -> int:
         "meta": meta,
         "overview": overview,
         "by_year": by_year,
+        "by_month": by_month,
         "by_department": by_dept,
         "by_funding": by_funding,
         "recipients": recipients,

@@ -55,6 +55,13 @@ export type YearAgg = {
   n_recipients: number;
 };
 
+export type MonthAgg = {
+  year_month: string; // "YYYY-MM"
+  n_payments: number;
+  total: number;
+  n_recipients: number;
+};
+
 export type DepartmentAgg = {
   name: string;
   slug: string;
@@ -100,6 +107,7 @@ export type RecipientsPayload = {
   };
   overview?: Overview;
   by_year?: YearAgg[];
+  by_month?: MonthAgg[];
   by_department?: DepartmentAgg[];
   by_funding?: FundingAgg[];
   recipients: RecipientRow[];

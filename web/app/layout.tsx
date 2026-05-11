@@ -31,8 +31,8 @@ export default function RootLayout({
               <Link href="/funding/" className="hover:text-stone-900">
                 Funding
               </Link>
-              <Link href="/years/" className="hover:text-stone-900">
-                By year
+              <Link href="/timeline/" className="hover:text-stone-900">
+                Timeline
               </Link>
               <Link href="/methodology/" className="hover:text-stone-900">
                 Methodology

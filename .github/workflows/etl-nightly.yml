@@ -48,22 +48,22 @@ jobs:
       # (data/raw/checkbook_columns.json). On GitHub-hosted runners we have
       # network access, so we always run the probe — it doubles as an API
       # smoke test, and commits any column-rename it detects.
-      - name: Probe Denver Checkbook column map + date range + catalog + siblings
+      # We've established that the live Socrata dataset is current-calendar-year
+      # only and that no Wayback / sibling Socrata path provides historical
+      # data. The expensive one-time probes (catalog-search, probe-siblings,
+      # wayback-probe) have served their purpose; the column probe and the
+      # date-range probe still run nightly so the site stays honest as the
+      # dataset rolls over each January.
+      - name: Probe Denver Checkbook column map + date range
         env:
           SOCRATA_APP_TOKEN: ${{ secrets.SOCRATA_APP_TOKEN }}
         run: |
           set -ex
           python -m etl.sources.denver_checkbook.scan --columns
           python -m etl.sources.denver_checkbook.scan --date-range
-          python -m etl.sources.denver_checkbook.scan --catalog-search
-          python -m etl.sources.denver_checkbook.scan --probe-siblings
-          python -m etl.sources.denver_checkbook.scan --wayback-probe
           echo "--- probe artifacts preview ---"
           ls -la data/raw/
           head -40 data/raw/checkbook_date_range.json || true
-          head -60 data/raw/socrata_catalog_denver_checkbook.json || true
-          head -120 data/raw/sibling_dataset_probes.json || true
-          head -120 data/raw/wayback_snapshots.json || true
 
       - name: Commit probe artifacts if changed
         run: |
@@ -72,10 +72,7 @@ jobs:
           git config user.email "bot@denver-tracker.local"
           git add --ignore-errors -f \
             data/raw/checkbook_columns.json \
-            data/raw/checkbook_date_range.json \
-            data/raw/socrata_catalog_denver_checkbook.json \
-            data/raw/sibling_dataset_probes.json \
-            data/raw/wayback_snapshots.json || true
+            data/raw/checkbook_date_range.json || true
           git status --short
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh Denver checkbook probe artifacts [skip-etl]"

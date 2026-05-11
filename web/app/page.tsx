@@ -100,36 +100,39 @@ export default function Home() {
         />
       </MetricGrid>
 
-      {byYear.length > 0 && (
+      {data.by_month && data.by_month.length > 0 && (
         <>
-          <h2>Annual spend, year over year</h2>
+          <h2>Monthly spend, {data.by_month[0].year_month.slice(0, 4)}</h2>
           {byYear.length === 1 ? (
             <p
               style={{
                 borderLeft: "3px solid #b45309",
                 paddingLeft: 12,
                 color: "#57534e",
+                background: "#fef3c7",
+                padding: "0.75rem 1rem",
+                borderRadius: 4,
               }}
             >
-              <strong>Single-year coverage.</strong> The Denver Open Checkbook
-              dataset (<code>wnau-xrqi</code>) is current-calendar-year only:
-              it rolls over every January, so today it holds <em>only</em>{" "}
-              {byYear[0].year} payments. We&rsquo;ve confirmed this against the
-              dataset directly &mdash; see{" "}
-              <Link href="/data/">data status</Link> for the evidence and a
-              list of candidate historical sources we&rsquo;re investigating
-              next.
+              <strong>Single-year coverage confirmed.</strong> The Denver Open
+              Checkbook dataset rolls over every January. We probed every
+              realistic alternative source (sibling Socrata datasets, the
+              Internet Archive Wayback Machine, the Denver Open Data portal)
+              and none returns transactional data for 2020&ndash;2024. See{" "}
+              <Link href="/data/">data status</Link> for the full evidence
+              and the historical-data backlog.
             </p>
-          ) : (
-            <p>
-              Total dollars attributed to homelessness-related nonprofits each
-              calendar year.
-            </p>
-          )}
+          ) : null}
           <VBar
-            items={byYear.map((y) => ({ label: y.year, value: y.total }))}
+            items={data.by_month.map((m) => ({
+              label: m.year_month.slice(5),
+              value: m.total,
+            }))}
             formatter={fmtUSDCompact}
           />
+          <p>
+            <Link href="/timeline/">See full timeline (monthly + annual) →</Link>
+          </p>
         </>
       )}
 
