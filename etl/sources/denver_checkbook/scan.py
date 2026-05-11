@@ -436,26 +436,42 @@ def cmd_wayback_probe() -> None:
         ("denvergov.org/opendata", "prefix"),
     ]
     all_snapshots = []
-    for url, mt in targets:
+    diagnostics: list[dict[str, Any]] = []
+    # Sanity check first: a known-archived URL. If THIS returns nothing
+    # the issue is our request format or the runner's egress, not the
+    # Denver URLs being uncrawled.
+    sanity_url = "google.com"
+    targets_with_sanity = [(sanity_url, "exact", "sanity-check")] + [(u, m, "denver") for u, m in targets]
+
+    for url, mt, kind in targets_with_sanity:
         cdx = (
             "https://web.archive.org/cdx/search/cdx"
             f"?url={urllib.parse.quote(url, safe='/:.&=?')}"
             "&from=20200101&to=20260601"
             "&output=json"
             f"&matchType={mt}"
-            "&limit=500"
+            "&limit=20"
         )
+        diag: dict[str, Any] = {"url": url, "matchType": mt, "kind": kind, "cdx": cdx}
         print(f"GET {cdx}")
         try:
             req = urllib.request.Request(cdx, headers={"User-Agent": "denver-tracker/0.1"})
             with urllib.request.urlopen(req, timeout=30) as resp:
                 body = resp.read().decode("utf-8")
-                print(f"  -> {len(body)} bytes")
+                diag["http_status"] = resp.status
+                diag["body_len"] = len(body)
+                diag["body_head"] = body[:300]
+                print(f"  -> HTTP {resp.status}  {len(body)} bytes  head={body[:120]!r}")
                 rows = json.loads(body or "[]")
         except Exception as e:
+            diag["error"] = repr(e)
             print(f"  failed: {e}")
+            diagnostics.append(diag)
             continue
-        # First row is the header (urlkey, timestamp, original, mimetype, statuscode, digest, length)
+        diag["n_rows"] = len(rows)
+        diagnostics.append(diag)
+        if kind == "sanity-check":
+            continue  # don't count sanity-check rows toward snapshots
         if not rows or len(rows) < 2:
             print(f"  no snapshots for {url}")
             continue
@@ -490,6 +506,7 @@ def cmd_wayback_probe() -> None:
                 "fetched_at": dt.datetime.now(tz=dt.timezone.utc).isoformat(),
                 "n_snapshots_total": len(all_snapshots),
                 "by_target_year": by_target_year,
+                "diagnostics": diagnostics,
                 "snapshots": all_snapshots,
             },
             indent=2,
