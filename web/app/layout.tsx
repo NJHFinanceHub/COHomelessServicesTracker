@@ -21,17 +21,26 @@ export default function RootLayout({
             <Link href="/" className="font-semibold text-lg">
               Denver Homelessness Dollar Tracker
             </Link>
-            <nav className="flex gap-4 text-sm text-stone-600 ml-auto">
-              <Link href="/recipients" className="hover:text-stone-900">
+            <nav className="flex gap-4 text-sm text-stone-600 ml-auto flex-wrap">
+              <Link href="/recipients/" className="hover:text-stone-900">
                 Recipients
               </Link>
-              <Link href="/methodology" className="hover:text-stone-900">
+              <Link href="/departments/" className="hover:text-stone-900">
+                Departments
+              </Link>
+              <Link href="/funding/" className="hover:text-stone-900">
+                Funding
+              </Link>
+              <Link href="/years/" className="hover:text-stone-900">
+                By year
+              </Link>
+              <Link href="/methodology/" className="hover:text-stone-900">
                 Methodology
               </Link>
-              <Link href="/sources" className="hover:text-stone-900">
+              <Link href="/sources/" className="hover:text-stone-900">
                 Sources
               </Link>
-              <Link href="/data" className="hover:text-stone-900">
+              <Link href="/data/" className="hover:text-stone-900">
                 Data status
               </Link>
               <a

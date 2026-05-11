@@ -2,34 +2,50 @@
 Phase 6 (early): emit JSON the frontend can render.
 
 NOT yet computing per-unit costs — that needs outcome data we don't have
-ingested yet. This step does the safe-to-publish things:
+ingested yet. This step computes safe-to-publish financial aggregates.
 
-  - Per-recipient totals (count, sum, first/last payment date)
-  - Per-recipient annual breakdown
-  - Per-recipient top departments and top funding sources
+Output: a single `data/processed/recipients.json` containing:
+  - meta            high-level numbers, timestamps, seed-match stats
+  - overview        homepage summary (totals, date range, top facts)
+  - by_year         year-by-year aggregate spend
+  - by_department   city department breakdown
+  - by_funding      funding-source breakdown
+  - recipients      per-recipient detail with full breakdowns + recent payments
+  - seeds           per-seed match status (matched/unmatched + curator notes)
 
-All emitted as static JSON in data/processed/ for the Next.js frontend.
-
-When outcome data lands (Phase 5), per-unit-cost computation slots in
-here, GATED by the tier rules in docs/methodology.md. Cross-tier
-aggregation must remain impossible.
+Per-unit costs (cost-per-bed-night, cost-per-PSH-month, etc.) are gated on
+the tier rules in docs/methodology.md and require outcome data — punted to
+Phase 5.
 """
 from __future__ import annotations
 
 import argparse
 import datetime as dt
 import json
+import re
 import sqlite3
 import sys
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
 from etl.sources.denver_checkbook.vendor_seeds import SEEDS
 
 
+SLUG_RE = re.compile(r"[^a-z0-9]+")
+
+
+def slugify(name: str) -> str:
+    s = SLUG_RE.sub("-", name.lower()).strip("-")
+    return s or "unknown"
+
+
 def _per_recipient_summary(con: sqlite3.Connection) -> list[dict[str, Any]]:
-    """Aggregate per-recipient: total, count, date range, by-year, top departments/funding."""
+    """Rich per-recipient detail. Each row includes:
+       - top-line totals (count, sum, date range)
+       - full year / department / funding-source / expense-category breakdowns
+       - a recent-payments sample (most-recent 50, for detail-page rendering)
+    """
     base_rows = con.execute(
         """
         SELECT r.id, r.legal_name,
@@ -47,11 +63,14 @@ def _per_recipient_summary(con: sqlite3.Connection) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     for rid, name, n, total, first_date, last_date in base_rows:
         by_year: dict[str, float] = defaultdict(float)
+        by_year_count: dict[str, int] = defaultdict(int)
         dept_totals: dict[str, float] = defaultdict(float)
         fund_totals: dict[str, float] = defaultdict(float)
-        for payment_date, amount, dept_name, fund_code in con.execute(
+        cat_totals: dict[str, float] = defaultdict(float)
+
+        for payment_date, amount, dept_name, fund_code, obj_code in con.execute(
             """
-            SELECT p.payment_date, p.amount, a.name, p.fund_code
+            SELECT p.payment_date, p.amount, a.name, p.fund_code, p.object_code
             FROM payment p
             JOIN agency a ON a.id = p.agency_id
             WHERE p.recipient_id = ?
@@ -59,33 +78,199 @@ def _per_recipient_summary(con: sqlite3.Connection) -> list[dict[str, Any]]:
             (rid,),
         ):
             year = (payment_date or "")[:4] or "unknown"
-            by_year[year] += float(amount or 0)
+            amt = float(amount or 0)
+            by_year[year] += amt
+            by_year_count[year] += 1
             if dept_name:
-                dept_totals[dept_name] += float(amount or 0)
+                dept_totals[dept_name] += amt
             if fund_code:
-                fund_totals[fund_code] += float(amount or 0)
+                fund_totals[fund_code] += amt
+            if obj_code:
+                cat_totals[obj_code] += amt
 
-        top_depts = sorted(dept_totals.items(), key=lambda x: -x[1])[:3]
-        top_funds = sorted(fund_totals.items(), key=lambda x: -x[1])[:3]
+        recent = [
+            {
+                "date": row[0],
+                "amount": round(float(row[1] or 0), 2),
+                "department": row[2],
+                "funding_source": row[3],
+                "expense_category": row[4],
+                "description": row[5],
+            }
+            for row in con.execute(
+                """
+                SELECT p.payment_date, p.amount, a.name, p.fund_code,
+                       p.object_code, p.description
+                FROM payment p
+                JOIN agency a ON a.id = p.agency_id
+                WHERE p.recipient_id = ?
+                ORDER BY p.payment_date DESC, p.id DESC
+                LIMIT 50
+                """,
+                (rid,),
+            )
+        ]
 
         out.append(
             {
                 "id": rid,
                 "legal_name": name,
+                "slug": slugify(name),
                 "n_payments": int(n or 0),
                 "total_paid": round(float(total or 0), 2),
                 "first_payment_date": first_date,
                 "last_payment_date": last_date,
-                "by_year": {y: round(v, 2) for y, v in sorted(by_year.items())},
-                "top_departments": [
-                    {"name": d, "amount": round(v, 2)} for d, v in top_depts
+                "years_active": sorted(by_year.keys()),
+                "by_year": [
+                    {"year": y, "amount": round(by_year[y], 2),
+                     "n_payments": by_year_count[y]}
+                    for y in sorted(by_year.keys())
                 ],
-                "top_funding_sources": [
-                    {"name": f, "amount": round(v, 2)} for f, v in top_funds
+                "by_department": [
+                    {"name": d, "amount": round(v, 2)}
+                    for d, v in sorted(dept_totals.items(), key=lambda x: -x[1])
                 ],
+                "by_funding_source": [
+                    {"name": f, "amount": round(v, 2)}
+                    for f, v in sorted(fund_totals.items(), key=lambda x: -x[1])
+                ],
+                "by_expense_category": [
+                    {"name": c, "amount": round(v, 2)}
+                    for c, v in sorted(cat_totals.items(), key=lambda x: -x[1])
+                ],
+                "recent_payments": recent,
             }
         )
     return out
+
+
+def _aggregate_by_year(con: sqlite3.Connection) -> list[dict[str, Any]]:
+    rows = con.execute(
+        """
+        SELECT substr(p.payment_date, 1, 4) AS year,
+               COUNT(p.id) AS n_payments,
+               COALESCE(SUM(p.amount), 0) AS total,
+               COUNT(DISTINCT p.recipient_id) AS n_recipients
+        FROM payment p
+        WHERE p.payment_date IS NOT NULL
+        GROUP BY year
+        ORDER BY year ASC
+        """
+    ).fetchall()
+    return [
+        {
+            "year": row[0],
+            "n_payments": int(row[1]),
+            "total": round(float(row[2]), 2),
+            "n_recipients": int(row[3]),
+        }
+        for row in rows
+        if row[0]
+    ]
+
+
+def _aggregate_by_department(con: sqlite3.Connection) -> list[dict[str, Any]]:
+    rows = con.execute(
+        """
+        SELECT a.name,
+               COUNT(p.id) AS n_payments,
+               COALESCE(SUM(p.amount), 0) AS total,
+               COUNT(DISTINCT p.recipient_id) AS n_recipients
+        FROM payment p
+        JOIN agency a ON a.id = p.agency_id
+        GROUP BY a.name
+        ORDER BY total DESC
+        """
+    ).fetchall()
+    out = []
+    for name, n_payments, total, n_recipients in rows:
+        # Top 5 recipients for this department, for drill-down rendering.
+        top_r = [
+            {"name": rname, "amount": round(float(amt), 2)}
+            for rname, amt in con.execute(
+                """
+                SELECT r.legal_name, SUM(p.amount) AS amt
+                FROM payment p
+                JOIN recipient r ON r.id = p.recipient_id
+                WHERE p.agency_id = (SELECT id FROM agency WHERE name = ?)
+                GROUP BY r.legal_name
+                ORDER BY amt DESC
+                LIMIT 5
+                """,
+                (name,),
+            )
+        ]
+        out.append(
+            {
+                "name": name,
+                "slug": slugify(name),
+                "n_payments": int(n_payments),
+                "total": round(float(total), 2),
+                "n_recipients": int(n_recipients),
+                "top_recipients": top_r,
+            }
+        )
+    return out
+
+
+def _aggregate_by_funding(con: sqlite3.Connection) -> list[dict[str, Any]]:
+    rows = con.execute(
+        """
+        SELECT p.fund_code AS name,
+               COUNT(p.id) AS n_payments,
+               COALESCE(SUM(p.amount), 0) AS total,
+               COUNT(DISTINCT p.recipient_id) AS n_recipients
+        FROM payment p
+        WHERE p.fund_code IS NOT NULL AND p.fund_code != ''
+        GROUP BY p.fund_code
+        ORDER BY total DESC
+        """
+    ).fetchall()
+    return [
+        {
+            "name": row[0],
+            "slug": slugify(row[0]),
+            "n_payments": int(row[1]),
+            "total": round(float(row[2]), 2),
+            "n_recipients": int(row[3]),
+        }
+        for row in rows
+    ]
+
+
+def _overview(meta: dict[str, Any], recipients: list[dict[str, Any]],
+              by_year: list[dict[str, Any]], by_dept: list[dict[str, Any]],
+              by_funding: list[dict[str, Any]]) -> dict[str, Any]:
+    total_paid = sum(r["total_paid"] for r in recipients)
+    matched = [r for r in recipients if r["n_payments"] > 0]
+    first = min((r["first_payment_date"] for r in matched if r["first_payment_date"]), default=None)
+    last = max((r["last_payment_date"] for r in matched if r["last_payment_date"]), default=None)
+    years_active = sorted({y["year"] for y in by_year})
+    return {
+        "total_paid": round(total_paid, 2),
+        "n_payments": int(meta.get("n_payments", 0)),
+        "n_recipients_matched": len(matched),
+        "n_seeds_total": meta.get("n_seeds"),
+        "n_seeds_matched": meta.get("n_seeds_matched"),
+        "n_departments": len(by_dept),
+        "n_funding_sources": len(by_funding),
+        "first_payment_date": first,
+        "last_payment_date": last,
+        "n_years": len(years_active),
+        "years_active": years_active,
+        "top_recipient": (
+            {"name": matched[0]["legal_name"], "amount": matched[0]["total_paid"]}
+            if matched else None
+        ),
+        "top_department": (
+            {"name": by_dept[0]["name"], "amount": by_dept[0]["total"]}
+            if by_dept else None
+        ),
+        "top_funding_source": (
+            {"name": by_funding[0]["name"], "amount": by_funding[0]["total"]}
+            if by_funding else None
+        ),
+    }
 
 
 def _meta(con: sqlite3.Connection) -> dict[str, Any]:
@@ -142,20 +327,33 @@ def main(argv: list[str] | None = None) -> int:
     try:
         meta = _meta(con)
         recipients = _per_recipient_summary(con)
+        by_year = _aggregate_by_year(con)
+        by_dept = _aggregate_by_department(con)
+        by_funding = _aggregate_by_funding(con)
     finally:
         con.close()
 
     seeds = _seeds_summary(recipients)
-    matched_count = sum(1 for s in seeds if s["matched"])
     meta["n_seeds"] = len(seeds)
-    meta["n_seeds_matched"] = matched_count
+    meta["n_seeds_matched"] = sum(1 for s in seeds if s["matched"])
 
-    payload = {"meta": meta, "recipients": recipients, "seeds": seeds}
+    overview = _overview(meta, recipients, by_year, by_dept, by_funding)
+
+    payload = {
+        "meta": meta,
+        "overview": overview,
+        "by_year": by_year,
+        "by_department": by_dept,
+        "by_funding": by_funding,
+        "recipients": recipients,
+        "seeds": seeds,
+    }
     out_path = out_dir / "recipients.json"
     out_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
     print(
         f"Wrote {out_path}: {meta['n_recipients']} recipients, "
-        f"{meta['n_payments']} payments, seeds matched {matched_count}/{len(seeds)}."
+        f"{meta['n_payments']} payments, seeds matched {meta['n_seeds_matched']}/{meta['n_seeds']}, "
+        f"{len(by_year)} years, {len(by_dept)} depts, {len(by_funding)} funding sources."
     )
     return 0
 
