@@ -6,15 +6,16 @@ on:
     - cron: "17 9 * * *"
   workflow_dispatch:
   push:
-    # Re-run when code changes; do NOT re-run on this workflow's own data commits.
+    # Re-run only when ETL-relevant code changes. Bot data commits, docs,
+    # and frontend edits do NOT re-trigger.
     branches:
       - main
       - 'claude/**'
-    paths-ignore:
-      - 'data/**'
-      - 'docs/**'
-      - '*.md'
-      - 'web/**'  # frontend-only changes don't need an ETL re-run
+    paths:
+      - 'etl/**'
+      - 'db/**'
+      - 'Makefile'
+      - '.github/workflows/etl-nightly.yml'
 
 concurrency:
   group: etl-nightly
