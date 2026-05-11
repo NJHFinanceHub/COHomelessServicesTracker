@@ -28,6 +28,9 @@ export default function RootLayout({
               <Link href="/sources" className="hover:text-stone-900">
                 Sources
               </Link>
+              <Link href="/data" className="hover:text-stone-900">
+                Data status
+              </Link>
               <a
                 href="https://github.com/njhfinancehub/cohomelessservicestracker"
                 className="hover:text-stone-900"
