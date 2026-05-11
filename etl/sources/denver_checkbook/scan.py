@@ -243,6 +243,7 @@ def cmd_date_range(client: SocrataClient) -> None:
     sum_total = float(overall_row.get("sum_total") or 0) if amount_field else None
 
     # 2) per-year counts. Socrata's date_extract_y on calendar_date returns year as int.
+    # GROUP BY is required by SoQL when mixing aggregate and non-aggregate select cols.
     year_expr = f"date_extract_y({date_field})"
     per_year_rows = list(
         client.query(
@@ -251,6 +252,7 @@ def cmd_date_range(client: SocrataClient) -> None:
                 + (f", sum({amount_field}) AS amount" if amount_field else "")
             ),
             where=f"{date_field} IS NOT NULL",
+            group=year_expr,
             order="year ASC",
             limit=200,
             max_rows=200,

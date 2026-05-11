@@ -95,6 +95,7 @@ class SocrataClient:
         *,
         select: Optional[str] = None,
         where: Optional[str] = None,
+        group: Optional[str] = None,
         order: Optional[str] = None,
         limit: int = DEFAULT_PAGE_SIZE,
         max_rows: Optional[int] = None,
@@ -107,12 +108,17 @@ class SocrataClient:
         single-quotes around string values, e.g.:
 
             where="upper(vendor_name) LIKE '%COALITION%'"
+
+        For aggregate queries with non-aggregate select columns, set
+        `group=` to the alias used in $select. Required by SoQL.
         """
         params_base: Dict[str, str] = {"$limit": str(limit)}
         if select:
             params_base["$select"] = select
         if where:
             params_base["$where"] = where
+        if group:
+            params_base["$group"] = group
         if order:
             params_base["$order"] = order
 

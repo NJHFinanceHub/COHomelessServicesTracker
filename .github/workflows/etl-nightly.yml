@@ -52,14 +52,22 @@ jobs:
         env:
           SOCRATA_APP_TOKEN: ${{ secrets.SOCRATA_APP_TOKEN }}
         run: |
+          set -ex
           python -m etl.sources.denver_checkbook.scan --columns
           python -m etl.sources.denver_checkbook.scan --date-range
+          echo "--- probe artifact preview ---"
+          ls -la data/raw/
+          head -40 data/raw/checkbook_date_range.json || true
 
       - name: Commit probe artifacts if changed
         run: |
+          set -ex
           git config user.name  "denver-tracker-bot"
           git config user.email "bot@denver-tracker.local"
-          git add -f data/raw/checkbook_columns.json data/raw/checkbook_date_range.json
+          # Use --ignore-errors so a missing file doesn't blow up; we'll detect
+          # the real situation via git status.
+          git add --ignore-errors -f data/raw/checkbook_columns.json data/raw/checkbook_date_range.json || true
+          git status --short
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh Denver checkbook probe artifacts [skip-etl]"
             git push
