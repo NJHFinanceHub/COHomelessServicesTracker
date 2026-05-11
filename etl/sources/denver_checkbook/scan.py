@@ -207,6 +207,128 @@ def cmd_vendor_counts(client: SocrataClient, rows: int) -> None:
         print(f"  {n:6d}  ${matched_totals[canon]:14,.2f}  {canon}")
 
 
+def _probe_one_dataset_date_range(client: SocrataClient, label: str) -> dict[str, Any] | None:
+    """Date-range probe for an arbitrary dataset. Returns the payload dict or None on failure."""
+    try:
+        cols = client.columns()
+    except Exception as e:
+        print(f"[{label}] columns fetch failed: {e}", file=sys.stderr)
+        return None
+    date_field = discover_field(cols, DATE_FIELD_CANDIDATES + [
+        # Procurement-flavored date columns
+        "po_date", "purchase_date", "contract_date", "award_date",
+        "start_date", "end_date", "effective_date", "issued_date",
+    ])
+    amount_field = discover_field(cols, AMOUNT_FIELD_CANDIDATES + [
+        "total_amount", "contract_amount", "po_amount", "award_amount",
+    ])
+    if not date_field:
+        print(f"[{label}] no date column found; columns: " +
+              ", ".join(c["fieldName"] for c in cols[:25]), file=sys.stderr)
+        return {
+            "label": label,
+            "dataset_id": client.dataset.dataset_id,
+            "endpoint": client.dataset.resource_url,
+            "fetched_at": dt.datetime.now(tz=dt.timezone.utc).isoformat(),
+            "error": "no date column discovered",
+            "available_columns": [c["fieldName"] for c in cols],
+        }
+    try:
+        overall = list(
+            client.query(
+                select=(
+                    f"min({date_field}) AS min_date, "
+                    f"max({date_field}) AS max_date, "
+                    f"count(*) AS n_total"
+                    + (f", sum({amount_field}) AS sum_total" if amount_field else "")
+                ),
+                limit=1,
+                max_rows=1,
+            )
+        )
+    except Exception as e:
+        print(f"[{label}] aggregate query failed: {e}", file=sys.stderr)
+        return None
+    row = overall[0] if overall else {}
+    min_date = row.get("min_date")
+    max_date = row.get("max_date")
+    n_total = int(row.get("n_total") or 0)
+    sum_total = float(row.get("sum_total") or 0) if amount_field else None
+
+    year_expr = f"date_extract_y({date_field})"
+    per_year = []
+    try:
+        per_year_rows = list(
+            client.query(
+                select=(
+                    f"{year_expr} AS year, count(*) AS n"
+                    + (f", sum({amount_field}) AS amount" if amount_field else "")
+                ),
+                where=f"{date_field} IS NOT NULL",
+                group=year_expr,
+                order="year ASC",
+                limit=200,
+                max_rows=200,
+            )
+        )
+        per_year = [
+            {
+                "year": str(int(float(r["year"]))) if r.get("year") is not None else "unknown",
+                "n_payments": int(r.get("n") or 0),
+                "total": float(r.get("amount") or 0) if amount_field else None,
+            }
+            for r in per_year_rows
+        ]
+    except Exception as e:
+        print(f"[{label}] per-year query failed: {e}", file=sys.stderr)
+
+    return {
+        "label": label,
+        "dataset_id": client.dataset.dataset_id,
+        "endpoint": client.dataset.resource_url,
+        "date_field": date_field,
+        "amount_field": amount_field,
+        "fetched_at": dt.datetime.now(tz=dt.timezone.utc).isoformat(),
+        "min_date": min_date,
+        "max_date": max_date,
+        "n_total_rows": n_total,
+        "sum_total": sum_total,
+        "per_year": per_year,
+    }
+
+
+def cmd_probe_sibling_datasets(_unused_client: SocrataClient) -> None:
+    """Probe every catalog-hit dataset for its date range.
+
+    Combined with --catalog-search this answers 'are there multi-year
+    historical datasets we should be ingesting?' definitively.
+    """
+    from .client import SocrataClient as _SC, SocrataDataset
+    catalog = json.loads(CATALOG_OUT.read_text()) if CATALOG_OUT.exists() else {"hits": []}
+    if not catalog.get("hits"):
+        print("No catalog hits yet; run --catalog-search first.")
+        return
+    out_path = Path("data/raw/sibling_dataset_probes.json")
+    probes = []
+    for hit in catalog["hits"]:
+        dom = hit.get("domain")
+        rid = hit.get("id")
+        if not dom or not rid:
+            continue
+        client2 = _SC(dataset=SocrataDataset(domain=dom, dataset_id=rid))
+        label = f"{dom}/{rid} — {hit.get('name','')}"
+        print(f"--- probing {label} ---")
+        p = _probe_one_dataset_date_range(client2, label)
+        if p:
+            p["catalog_name"] = hit.get("name")
+            p["catalog_permalink"] = hit.get("permalink")
+            probes.append(p)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps({"fetched_at": dt.datetime.now(tz=dt.timezone.utc).isoformat(),
+                                     "probes": probes}, indent=2, sort_keys=True) + "\n")
+    print(f"Wrote {out_path} with {len(probes)} probes.")
+
+
 def cmd_date_range(client: SocrataClient) -> None:
     """Query dataset-wide min/max paymentdate plus per-year counts and totals.
 
@@ -409,6 +531,8 @@ def main(argv: Iterable[str] | None = None) -> int:
                    help="Persist dataset min/max paymentdate and per-year counts")
     p.add_argument("--catalog-search", action="store_true",
                    help="Search Socrata's Discovery API for sibling Denver checkbook datasets")
+    p.add_argument("--probe-siblings", action="store_true",
+                   help="Probe date range of every catalog-hit dataset")
     p.add_argument("--sample", action="store_true", help="Print a sample row dump")
     p.add_argument("--vendor-counts", action="store_true", help="Top vendors + seed match summary")
     p.add_argument("--new-candidates", action="store_true",
@@ -429,6 +553,9 @@ def main(argv: Iterable[str] | None = None) -> int:
         return 0
     if args.catalog_search:
         cmd_catalog_search()
+        return 0
+    if args.probe_siblings:
+        cmd_probe_sibling_datasets(client)
         return 0
     if args.sample:
         cmd_sample(client, args.rows)

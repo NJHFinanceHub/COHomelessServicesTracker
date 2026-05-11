@@ -48,7 +48,7 @@ jobs:
       # (data/raw/checkbook_columns.json). On GitHub-hosted runners we have
       # network access, so we always run the probe — it doubles as an API
       # smoke test, and commits any column-rename it detects.
-      - name: Probe Denver Checkbook column map + date range + catalog
+      - name: Probe Denver Checkbook column map + date range + catalog + siblings
         env:
           SOCRATA_APP_TOKEN: ${{ secrets.SOCRATA_APP_TOKEN }}
         run: |
@@ -56,10 +56,12 @@ jobs:
           python -m etl.sources.denver_checkbook.scan --columns
           python -m etl.sources.denver_checkbook.scan --date-range
           python -m etl.sources.denver_checkbook.scan --catalog-search
+          python -m etl.sources.denver_checkbook.scan --probe-siblings
           echo "--- probe artifacts preview ---"
           ls -la data/raw/
           head -40 data/raw/checkbook_date_range.json || true
           head -60 data/raw/socrata_catalog_denver_checkbook.json || true
+          head -120 data/raw/sibling_dataset_probes.json || true
 
       - name: Commit probe artifacts if changed
         run: |
@@ -69,7 +71,8 @@ jobs:
           git add --ignore-errors -f \
             data/raw/checkbook_columns.json \
             data/raw/checkbook_date_range.json \
-            data/raw/socrata_catalog_denver_checkbook.json || true
+            data/raw/socrata_catalog_denver_checkbook.json \
+            data/raw/sibling_dataset_probes.json || true
           git status --short
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh Denver checkbook probe artifacts [skip-etl]"
