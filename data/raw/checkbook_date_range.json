@@ -1,0 +1,16 @@
+{
+  "dataset_id": "wnau-xrqi",
+  "endpoint": "https://data.colorado.gov/resource/wnau-xrqi.json",
+  "fetched_at": "2026-05-11T04:33:41.418598+00:00",
+  "max_date": "2025-12-30T00:00:00.000",
+  "min_date": "2025-01-02T00:00:00.000",
+  "n_total_rows": 154608,
+  "per_year": [
+    {
+      "n_payments": 154608,
+      "total": 3644766752.28,
+      "year": "2025"
+    }
+  ],
+  "sum_total": 3644766752.28
+}
