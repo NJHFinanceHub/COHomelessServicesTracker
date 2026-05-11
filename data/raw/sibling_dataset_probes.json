@@ -1,0 +1,41 @@
+{
+  "fetched_at": "2026-05-11T04:39:08.077973+00:00",
+  "probes": [
+    {
+      "amount_field": "amount",
+      "catalog_name": "City of Denver Checkbook",
+      "catalog_permalink": "https://data.colorado.gov/d/wnau-xrqi",
+      "dataset_id": "wnau-xrqi",
+      "date_field": "paymentdate",
+      "endpoint": "https://data.colorado.gov/resource/wnau-xrqi.json",
+      "fetched_at": "2026-05-11T04:39:07.330806+00:00",
+      "label": "data.colorado.gov/wnau-xrqi \u2014 City of Denver Checkbook",
+      "max_date": "2025-12-30T00:00:00.000",
+      "min_date": "2025-01-02T00:00:00.000",
+      "n_total_rows": 154608,
+      "per_year": [
+        {
+          "n_payments": 154608,
+          "total": 3644766752.28,
+          "year": "2025"
+        }
+      ],
+      "sum_total": 3644766752.28
+    },
+    {
+      "amount_field": "transaction_amount",
+      "catalog_name": "City of Denver Procurement Transactions",
+      "catalog_permalink": "https://data.colorado.gov/d/66zf-qjdd",
+      "dataset_id": "66zf-qjdd",
+      "date_field": "payment_date",
+      "endpoint": "https://data.colorado.gov/resource/66zf-qjdd.json",
+      "fetched_at": "2026-05-11T04:39:08.077866+00:00",
+      "label": "data.colorado.gov/66zf-qjdd \u2014 City of Denver Procurement Transactions",
+      "max_date": "2025-12-02-08:00",
+      "min_date": "2025-02-03-08:00",
+      "n_total_rows": 36931,
+      "per_year": [],
+      "sum_total": 16775088.43
+    }
+  ]
+}
