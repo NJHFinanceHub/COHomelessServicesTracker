@@ -31,3 +31,4 @@ data/interim/*
 .idea/
 .vscode/
 *.swp
+.claude/settings.local.json

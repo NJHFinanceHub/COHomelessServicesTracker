@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:data.colorado.gov)",
+      "WebFetch(domain:denvergov.org)",
+      "WebFetch(domain:www.denvergov.org)",
+      "WebFetch(domain:denver.legistar.com)",
+      "WebFetch(domain:mdhi.org)",
+      "WebFetch(domain:www.mdhi.org)",
+      "WebFetch(domain:projects.propublica.org)",
+      "WebFetch(domain:hudexchange.info)",
+      "WebFetch(domain:www.hudexchange.info)",
+      "WebFetch(domain:sam.gov)",
+      "WebFetch(domain:sos.state.co.us)",
+      "Bash(curl *)",
+      "Bash(python3 -m etl.*)",
+      "Bash(make etl)",
+      "Bash(make compute)"
+    ]
+  },
+  "sandbox": {
+    "network": {
+      "allowedDomains": [
+        "data.colorado.gov",
+        "*.socrata.com",
+        "denvergov.org",
+        "*.denvergov.org",
+        "denver.legistar.com",
+        "mdhi.org",
+        "*.mdhi.org",
+        "projects.propublica.org",
+        "hudexchange.info",
+        "www.hudexchange.info",
+        "sam.gov",
+        "*.sam.gov",
+        "sos.state.co.us"
+      ]
+    }
+  }
+}
