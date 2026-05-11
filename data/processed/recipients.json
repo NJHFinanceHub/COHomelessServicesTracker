@@ -1,9 +1,741 @@
 {
   "meta": {
-    "generated_at": "2026-05-11T01:44:26.160454+00:00",
-    "last_checkbook_fetch_at": null,
-    "n_payments": 0,
-    "n_recipients": 0
+    "generated_at": "2026-05-11T01:48:35.536403+00:00",
+    "last_checkbook_fetch_at": "2026-05-11T01:48:35.451649+00:00",
+    "n_payments": 1841,
+    "n_recipients": 21
   },
-  "recipients": []
+  "recipients": [
+    {
+      "by_year": {
+        "2025": 28601801.25
+      },
+      "first_payment_date": "2025-01-02",
+      "id": 7,
+      "last_payment_date": "2025-12-29",
+      "legal_name": "The Salvation Army",
+      "n_payments": 323,
+      "top_departments": [
+        {
+          "amount": 17824209.35,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 10296214.38,
+          "name": "Department of Housing Stability (HOST)"
+        },
+        {
+          "amount": 258181.34,
+          "name": "Denver Department of Public Health and E"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 13540345.45,
+          "name": "Homelessness Resolution"
+        },
+        {
+          "amount": 10310389.35,
+          "name": "General Fund"
+        },
+        {
+          "amount": 3261240.25,
+          "name": "Federal Grant - Other - Commun"
+        }
+      ],
+      "total_paid": 28601801.25
+    },
+    {
+      "by_year": {
+        "2025": 15170818.06
+      },
+      "first_payment_date": "2025-01-02",
+      "id": 1,
+      "last_payment_date": "2025-12-30",
+      "legal_name": "Colorado Coalition for the Homeless",
+      "n_payments": 224,
+      "top_departments": [
+        {
+          "amount": 8565832.95,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 5767894.53,
+          "name": "Department of Housing Stability (HOST)"
+        },
+        {
+          "amount": 647828.13,
+          "name": "Denver Department of Public Health and E"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 5767894.53,
+          "name": "General Fund"
+        },
+        {
+          "amount": 3545850.0,
+          "name": "HOST Performance Contracts"
+        },
+        {
+          "amount": 2453551.53,
+          "name": "American Rescue Plan Act"
+        }
+      ],
+      "total_paid": 15170818.06
+    },
+    {
+      "by_year": {
+        "2025": 11381424.53
+      },
+      "first_payment_date": "2025-01-15",
+      "id": 6,
+      "last_payment_date": "2025-12-17",
+      "legal_name": "Denver Rescue Mission",
+      "n_payments": 56,
+      "top_departments": [
+        {
+          "amount": 11381424.53,
+          "name": "Department of Housing Stability Special"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 11334211.33,
+          "name": "Homelessness Resolution"
+        },
+        {
+          "amount": 47213.2,
+          "name": "Homeless Shelter Utility Suppo"
+        }
+      ],
+      "total_paid": 11381424.53
+    },
+    {
+      "by_year": {
+        "2025": 10464547.52
+      },
+      "first_payment_date": "2025-01-08",
+      "id": 9,
+      "last_payment_date": "2025-12-30",
+      "legal_name": "WellPower (Mental Health Center of Denver)",
+      "n_payments": 77,
+      "top_departments": [
+        {
+          "amount": 5714276.27,
+          "name": "Denver Department of Public Health and E"
+        },
+        {
+          "amount": 2376764.72,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 2298673.1,
+          "name": "Police Department"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 5869961.59,
+          "name": "General Fund"
+        },
+        {
+          "amount": 2376764.72,
+          "name": "Affordable Housing Linkage Fee"
+        },
+        {
+          "amount": 2099999.99,
+          "name": "Safety Private Grants"
+        }
+      ],
+      "total_paid": 10464547.52
+    },
+    {
+      "by_year": {
+        "2025": 9903453.6
+      },
+      "first_payment_date": "2025-01-03",
+      "id": 3,
+      "last_payment_date": "2025-12-19",
+      "legal_name": "Catholic Charities of Denver",
+      "n_payments": 158,
+      "top_departments": [
+        {
+          "amount": 8157940.86,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 1306582.62,
+          "name": "Head Start"
+        },
+        {
+          "amount": 388962.39,
+          "name": "Service Delivery and Administration"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 8127940.86,
+          "name": "Homelessness Resolution"
+        },
+        {
+          "amount": 1306582.62,
+          "name": "Head Start"
+        },
+        {
+          "amount": 388962.39,
+          "name": "Border Crisis Response"
+        }
+      ],
+      "total_paid": 9903453.6
+    },
+    {
+      "by_year": {
+        "2025": 8541000.0
+      },
+      "first_payment_date": "2025-06-05",
+      "id": 17,
+      "last_payment_date": "2025-08-15",
+      "legal_name": "Mercy Housing Mountain Plains",
+      "n_payments": 5,
+      "top_departments": [
+        {
+          "amount": 8540000.0,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 1000.0,
+          "name": "Human Rights - Community Relations"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 6577273.0,
+          "name": "Homelessness Resolution"
+        },
+        {
+          "amount": 1962727.0,
+          "name": "Affordable Housing Linkage Fee"
+        },
+        {
+          "amount": 1000.0,
+          "name": "General Fund"
+        }
+      ],
+      "total_paid": 8541000.0
+    },
+    {
+      "by_year": {
+        "2025": 7703997.63
+      },
+      "first_payment_date": "2025-01-02",
+      "id": 2,
+      "last_payment_date": "2025-12-23",
+      "legal_name": "Volunteers of America Colorado",
+      "n_payments": 179,
+      "top_departments": [
+        {
+          "amount": 2768769.83,
+          "name": "Department of Housing Stability (HOST)"
+        },
+        {
+          "amount": 2713310.88,
+          "name": "Division of Workforce Development"
+        },
+        {
+          "amount": 1262653.47,
+          "name": "Department of Housing Stability Special"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 2769269.83,
+          "name": "General Fund"
+        },
+        {
+          "amount": 2553333.28,
+          "name": "CDBG"
+        },
+        {
+          "amount": 945135.2,
+          "name": "Homelessness Resolution"
+        }
+      ],
+      "total_paid": 7703997.63
+    },
+    {
+      "by_year": {
+        "2025": 7151307.9
+      },
+      "first_payment_date": "2025-01-16",
+      "id": 8,
+      "last_payment_date": "2025-12-29",
+      "legal_name": "Brothers Redevelopment, Inc.",
+      "n_payments": 100,
+      "top_departments": [
+        {
+          "amount": 6423535.29,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 375459.87,
+          "name": "Department of Housing Stability (HOST)"
+        },
+        {
+          "amount": 208941.16,
+          "name": "Safety Administration"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 4380902.11,
+          "name": "Affordable Housing Property Ta"
+        },
+        {
+          "amount": 1077562.88,
+          "name": "American Rescue Plan Act"
+        },
+        {
+          "amount": 906215.36,
+          "name": "Property Tax Rebate"
+        }
+      ],
+      "total_paid": 7151307.9
+    },
+    {
+      "by_year": {
+        "2025": 6910757.12
+      },
+      "first_payment_date": "2025-01-02",
+      "id": 4,
+      "last_payment_date": "2025-12-18",
+      "legal_name": "Bayaud Enterprises",
+      "n_payments": 149,
+      "top_departments": [
+        {
+          "amount": 3390042.3,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 1260909.94,
+          "name": "Department of Housing Stability (HOST)"
+        },
+        {
+          "amount": 913367.79,
+          "name": "Airport"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 2260422.51,
+          "name": "Homelessness Resolution"
+        },
+        {
+          "amount": 1279843.58,
+          "name": "General Fund"
+        },
+        {
+          "amount": 954964.18,
+          "name": "Federal Grant - Other - Commun"
+        }
+      ],
+      "total_paid": 6910757.12
+    },
+    {
+      "by_year": {
+        "2025": 4218777.11
+      },
+      "first_payment_date": "2025-01-07",
+      "id": 19,
+      "last_payment_date": "2025-12-22",
+      "legal_name": "Servicios de la Raza",
+      "n_payments": 88,
+      "top_departments": [
+        {
+          "amount": 3593656.29,
+          "name": "Denver Department of Public Health and E"
+        },
+        {
+          "amount": 356148.56,
+          "name": "Mayor's Office of Education and Children"
+        },
+        {
+          "amount": 167747.26,
+          "name": "Division of Workforce Development"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 2329876.58,
+          "name": "General Fund"
+        },
+        {
+          "amount": 1024800.33,
+          "name": "Health Private and Other Grant"
+        },
+        {
+          "amount": 314998.33,
+          "name": "Healthy Foods for Denver's Kid"
+        }
+      ],
+      "total_paid": 4218777.11
+    },
+    {
+      "by_year": {
+        "2025": 3873996.28
+      },
+      "first_payment_date": "2025-01-03",
+      "id": 5,
+      "last_payment_date": "2025-12-30",
+      "legal_name": "Urban Peak",
+      "n_payments": 165,
+      "top_departments": [
+        {
+          "amount": 2098035.54,
+          "name": "Department of Housing Stability (HOST)"
+        },
+        {
+          "amount": 1347385.01,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 291974.73,
+          "name": "Denver Department of Public Health and E"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 2103035.54,
+          "name": "General Fund"
+        },
+        {
+          "amount": 760730.06,
+          "name": "Homelessness Resolution"
+        },
+        {
+          "amount": 291974.73,
+          "name": "Healthy Foods for Denver's Kid"
+        }
+      ],
+      "total_paid": 3873996.28
+    },
+    {
+      "by_year": {
+        "2025": 1997666.83
+      },
+      "first_payment_date": "2025-01-10",
+      "id": 10,
+      "last_payment_date": "2025-12-22",
+      "legal_name": "The Gathering Place",
+      "n_payments": 58,
+      "top_departments": [
+        {
+          "amount": 1305745.69,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 667171.14,
+          "name": "Department of Housing Stability (HOST)"
+        },
+        {
+          "amount": 24750.0,
+          "name": "Denver Department of Public Health and E"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 1195420.56,
+          "name": "Federal Grant - Other - Commun"
+        },
+        {
+          "amount": 691921.14,
+          "name": "General Fund"
+        },
+        {
+          "amount": 74325.13,
+          "name": "Homelessness Resolution"
+        }
+      ],
+      "total_paid": 1997666.83
+    },
+    {
+      "by_year": {
+        "2025": 1494420.23
+      },
+      "first_payment_date": "2025-01-16",
+      "id": 18,
+      "last_payment_date": "2025-12-17",
+      "legal_name": "The Empowerment Program",
+      "n_payments": 93,
+      "top_departments": [
+        {
+          "amount": 900802.14,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 467484.57,
+          "name": "Safety Administration"
+        },
+        {
+          "amount": 124066.41,
+          "name": "Denver Department of Public Health and E"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 741567.85,
+          "name": "Continuum of Care"
+        },
+        {
+          "amount": 467484.57,
+          "name": "General Fund"
+        },
+        {
+          "amount": 159234.29,
+          "name": "Housing Opportunities for Peop"
+        }
+      ],
+      "total_paid": 1494420.23
+    },
+    {
+      "by_year": {
+        "2025": 1371354.03
+      },
+      "first_payment_date": "2025-01-10",
+      "id": 13,
+      "last_payment_date": "2025-12-30",
+      "legal_name": "Delores Project",
+      "n_payments": 79,
+      "top_departments": [
+        {
+          "amount": 731287.54,
+          "name": "Department of Housing Stability (HOST)"
+        },
+        {
+          "amount": 374225.71,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 201272.78,
+          "name": "Service Delivery and Administration"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 731287.54,
+          "name": "General Fund"
+        },
+        {
+          "amount": 280226.66,
+          "name": "Homelessness Resolution"
+        },
+        {
+          "amount": 201272.78,
+          "name": "Community Service Block Grant"
+        }
+      ],
+      "total_paid": 1371354.03
+    },
+    {
+      "by_year": {
+        "2025": 460449.77
+      },
+      "first_payment_date": "2025-02-07",
+      "id": 20,
+      "last_payment_date": "2025-12-04",
+      "legal_name": "Denver Inner City Parish",
+      "n_payments": 23,
+      "top_departments": [
+        {
+          "amount": 457849.77,
+          "name": "Denver Department of Public Health and E"
+        },
+        {
+          "amount": 2600.0,
+          "name": "City Council"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 313675.1,
+          "name": "Healthy Foods for Denver's Kid"
+        },
+        {
+          "amount": 134174.67,
+          "name": "American Rescue Plan Act"
+        },
+        {
+          "amount": 10000.0,
+          "name": "Health Private and Other Grant"
+        }
+      ],
+      "total_paid": 460449.77
+    },
+    {
+      "by_year": {
+        "2025": 196506.96
+      },
+      "first_payment_date": "2025-01-14",
+      "id": 14,
+      "last_payment_date": "2025-11-14",
+      "legal_name": "Family Promise of Greater Denver",
+      "n_payments": 31,
+      "top_departments": [
+        {
+          "amount": 139938.23,
+          "name": "Department of Housing Stability (HOST)"
+        },
+        {
+          "amount": 56568.73,
+          "name": "Department of Housing Stability Special"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 139938.23,
+          "name": "General Fund"
+        },
+        {
+          "amount": 56568.73,
+          "name": "Homelessness Resolution"
+        }
+      ],
+      "total_paid": 196506.96
+    },
+    {
+      "by_year": {
+        "2025": 147280.04
+      },
+      "first_payment_date": "2025-01-30",
+      "id": 12,
+      "last_payment_date": "2025-12-17",
+      "legal_name": "Senior Support Services",
+      "n_payments": 20,
+      "top_departments": [
+        {
+          "amount": 142280.04,
+          "name": "Department of Housing Stability Special"
+        },
+        {
+          "amount": 5000.0,
+          "name": "Human Rights - Community Relations"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 137280.04,
+          "name": "Homelessness Resolution"
+        },
+        {
+          "amount": 5000.0,
+          "name": "General Fund"
+        },
+        {
+          "amount": 5000.0,
+          "name": "Homeless Shelter Utility Suppo"
+        }
+      ],
+      "total_paid": 147280.04
+    },
+    {
+      "by_year": {
+        "2025": 44813.31
+      },
+      "first_payment_date": "2025-02-10",
+      "id": 21,
+      "last_payment_date": "2025-07-31",
+      "legal_name": "Stride Community Health Center",
+      "n_payments": 9,
+      "top_departments": [
+        {
+          "amount": 44813.31,
+          "name": "Denver Department of Public Health and E"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 44813.31,
+          "name": "Ryan White Title I"
+        }
+      ],
+      "total_paid": 44813.31
+    },
+    {
+      "by_year": {
+        "2025": 5000.0
+      },
+      "first_payment_date": "2025-12-18",
+      "id": 11,
+      "last_payment_date": "2025-12-18",
+      "legal_name": "Denver Indian Health and Family Services",
+      "n_payments": 1,
+      "top_departments": [
+        {
+          "amount": 5000.0,
+          "name": "Human Rights - Community Relations"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 5000.0,
+          "name": "General Fund"
+        }
+      ],
+      "total_paid": 5000.0
+    },
+    {
+      "by_year": {
+        "2025": 4583.36
+      },
+      "first_payment_date": "2025-01-30",
+      "id": 15,
+      "last_payment_date": "2025-06-09",
+      "legal_name": "Florence Crittenton Services of Colorado",
+      "n_payments": 2,
+      "top_departments": [
+        {
+          "amount": 2500.0,
+          "name": "Human Rights - Community Relations"
+        },
+        {
+          "amount": 2083.36,
+          "name": "Mayor's Office of Education and Children"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 2500.0,
+          "name": "General Fund"
+        },
+        {
+          "amount": 2083.36,
+          "name": "Youth Activities Program"
+        }
+      ],
+      "total_paid": 4583.36
+    },
+    {
+      "by_year": {
+        "2025": 1000.0
+      },
+      "first_payment_date": "2025-06-10",
+      "id": 16,
+      "last_payment_date": "2025-06-10",
+      "legal_name": "Hope Communities, Inc.",
+      "n_payments": 1,
+      "top_departments": [
+        {
+          "amount": 1000.0,
+          "name": "Human Rights - Community Relations"
+        }
+      ],
+      "top_funding_sources": [
+        {
+          "amount": 1000.0,
+          "name": "General Fund"
+        }
+      ],
+      "total_paid": 1000.0
+    }
+  ]
 }
