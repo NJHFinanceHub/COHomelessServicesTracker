@@ -22,6 +22,9 @@ export default function RootLayout({
               Denver Homelessness Dollar Tracker
             </Link>
             <nav className="flex gap-4 text-sm text-stone-600 ml-auto">
+              <Link href="/recipients" className="hover:text-stone-900">
+                Recipients
+              </Link>
               <Link href="/methodology" className="hover:text-stone-900">
                 Methodology
               </Link>

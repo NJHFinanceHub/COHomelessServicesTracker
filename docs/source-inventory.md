@@ -11,7 +11,7 @@ Every primary source the site relies on, with current ingest status. Status lege
 
 | # | Source | Access | Cadence | Phase | Status |
 |---|---|---|---|---|---|
-| 1 | Denver Open Checkbook | Socrata SODA 2.0 — `data.colorado.gov/Business/City-of-Denver-Checkbook/wnau-xrqi` | Daily | 1 | scaffolded; awaiting `data/raw/checkbook_columns.json` from a network-enabled probe run |
+| 1 | Denver Open Checkbook | Socrata SODA 2.0 — `data.colorado.gov/Business/City-of-Denver-Checkbook/wnau-xrqi` | Daily | 1 | piloted; column probe verified, ingest implemented, awaiting first nightly run |
 | 2 | Denver Open Data Catalog (contracts, P-card, vendor master) | `denvergov.org/opendata` | Varies | 3 | not yet ingested |
 | 3 | HOST Annual Action Plans | `denvergov.org` HOST plans-and-reports page (PDF) | Annual | 2 | not yet ingested |
 | 4 | HOST quarterly performance reports | Same page (PDF) | Quarterly | 5 | not yet ingested |

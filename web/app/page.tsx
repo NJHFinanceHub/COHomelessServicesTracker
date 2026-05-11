@@ -20,13 +20,20 @@ export default function Home() {
       </p>
       <h2>Status</h2>
       <p>
-        <strong>Phase 0 &mdash; foundation.</strong> The repo is scaffolded, the data
-        model and methodology are published, and the Denver Open Checkbook
-        ingester is wired up but not yet running in production. No dollar figures
-        appear on this site yet.
+        <strong>Phase 1 &mdash; first dollars on the page.</strong> The Denver
+        Open Checkbook ingester runs nightly on GitHub Actions, pulls payments
+        for a curated list of ~30 homelessness-related nonprofits, and
+        deduplicates by Socrata row id. Per-unit costs are <em>not</em>{" "}
+        published yet &mdash; that needs outcome data we are working through
+        ingesting next.
       </p>
       <h2>Read first</h2>
       <ul>
+        <li>
+          <Link href="/recipients">Recipients</Link> &mdash; how much the city
+          has paid each nonprofit, by year, with top department and funding
+          source
+        </li>
         <li>
           <Link href="/methodology">Methodology</Link> &mdash; how we compute
           per-unit costs and what we deliberately do not do
@@ -34,6 +41,10 @@ export default function Home() {
         <li>
           <Link href="/sources">Sources</Link> &mdash; every primary dataset
           we plan to ingest, with current status
+        </li>
+        <li>
+          <Link href="/data">Data status</Link> &mdash; the live Socrata column
+          probe from the last nightly run
         </li>
         <li>
           <a
