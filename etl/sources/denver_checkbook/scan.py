@@ -421,30 +421,37 @@ def cmd_wayback_probe() -> None:
     import urllib.parse
     import urllib.request
 
+    # Each target tried both exact and prefix matchType. CDX returns
+    # different results for matchType=exact vs prefix; prefix catches
+    # the same URL with various query strings appended.
     targets = [
-        "data.colorado.gov/resource/wnau-xrqi.json",
-        "data.colorado.gov/api/views/wnau-xrqi/rows.csv",
-        "data.colorado.gov/resource/wnau-xrqi.csv",
-        # Same for procurement, in case it helps:
-        "data.colorado.gov/resource/66zf-qjdd.json",
-        # Denver's own city checkbook page may have downloadable historical data:
-        "denvergov.org/transparency/checkbook",
+        ("data.colorado.gov/resource/wnau-xrqi.json", "prefix"),
+        ("data.colorado.gov/api/views/wnau-xrqi/rows.csv", "prefix"),
+        ("data.colorado.gov/resource/wnau-xrqi.csv", "prefix"),
+        ("data.colorado.gov/d/wnau-xrqi", "prefix"),  # the human-readable dataset page
+        ("data.colorado.gov/Business/City-of-Denver-Checkbook", "prefix"),
+        ("data.colorado.gov/resource/66zf-qjdd.json", "prefix"),
+        ("denvergov.org/transparency/checkbook", "exact"),
+        ("denvergov.org/content/denvergov/en/transparent-denver/checkbook", "prefix"),
+        ("denvergov.org/opendata", "prefix"),
     ]
     all_snapshots = []
-    for url in targets:
+    for url, mt in targets:
         cdx = (
             "https://web.archive.org/cdx/search/cdx"
             f"?url={urllib.parse.quote(url, safe='/:.&=?')}"
             "&from=20200101&to=20260601"
             "&output=json"
-            "&filter=statuscode:200"
-            "&limit=200"
+            f"&matchType={mt}"
+            "&limit=500"
         )
         print(f"GET {cdx}")
         try:
             req = urllib.request.Request(cdx, headers={"User-Agent": "denver-tracker/0.1"})
             with urllib.request.urlopen(req, timeout=30) as resp:
-                rows = json.loads(resp.read().decode("utf-8") or "[]")
+                body = resp.read().decode("utf-8")
+                print(f"  -> {len(body)} bytes")
+                rows = json.loads(body or "[]")
         except Exception as e:
             print(f"  failed: {e}")
             continue
@@ -469,7 +476,7 @@ def cmd_wayback_probe() -> None:
     # Summarize: count per-target per-year.
     by_target_year: dict[str, dict[str, int]] = {}
     for s in all_snapshots:
-        ts = s.get("timestamp") or ""
+        ts = str(s.get("timestamp") or "")
         year = ts[:4] if len(ts) >= 4 else "unknown"
         t = s.get("target") or "?"
         by_target_year.setdefault(t, {}).setdefault(year, 0)
