@@ -1,0 +1,93 @@
+{
+  "columns": [
+    {
+      "dataTypeName": "text",
+      "fieldName": "rowid",
+      "name": "RowId"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "payee",
+      "name": "Payee"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "city",
+      "name": "City"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "state",
+      "name": "State"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "programarea",
+      "name": "ProgramArea"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "department",
+      "name": "Department"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "paymentid",
+      "name": "PaymentId"
+    },
+    {
+      "dataTypeName": "calendar_date",
+      "fieldName": "paymentdate",
+      "name": "PaymentDate"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "year",
+      "name": "Year"
+    },
+    {
+      "dataTypeName": "number",
+      "fieldName": "amount",
+      "name": "Amount"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "purchaseorder",
+      "name": "PurchaseOrder"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "fundingsourcedescription",
+      "name": "FundingSourceDescription"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "project",
+      "name": "Project"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "projectdescription",
+      "name": "ProjectDescription"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "expensecategory",
+      "name": "ExpenseCategory"
+    },
+    {
+      "dataTypeName": "text",
+      "fieldName": "expensesubcategory",
+      "name": "ExpenseSubCategory"
+    }
+  ],
+  "dataset_id": "wnau-xrqi",
+  "endpoint": "https://data.colorado.gov/resource/wnau-xrqi.json",
+  "fetched_at": "2026-05-11T01:17:13.296544+00:00",
+  "resolved": {
+    "amount_field": "amount",
+    "date_field": "paymentdate",
+    "vendor_field": "payee"
+  },
+  "rows_updated_at": 1777635736
+}
