@@ -15,14 +15,26 @@ export type RecipientRow = {
   top_funding_sources: { name: string; amount: number }[];
 };
 
+export type SeedStatus = {
+  canonical: string;
+  distinctive: string;
+  notes: string;
+  matched: boolean;
+  n_payments: number;
+  total_paid: number;
+};
+
 export type RecipientsPayload = {
   meta: {
     generated_at: string;
     last_checkbook_fetch_at: string | null;
     n_recipients: number;
     n_payments: number;
+    n_seeds?: number;
+    n_seeds_matched?: number;
   };
   recipients: RecipientRow[];
+  seeds?: SeedStatus[];
 };
 
 export function readRecipients(): RecipientsPayload | null {

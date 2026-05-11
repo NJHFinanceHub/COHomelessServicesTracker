@@ -75,10 +75,44 @@ def _sql_escape_literal(s: str) -> str:
     return s.replace("'", "''")
 
 
-def _build_where(vendor_field: str, distinctive: str) -> str:
-    """Server-side filter: case-insensitive substring match on the distinctive phrase."""
-    pat = _sql_escape_literal(distinctive)
-    return f"upper({vendor_field}) like upper('%{pat}%')"
+def _patterns_for_seed(seed: VendorSeed) -> list[str]:
+    """Distinctive + aliases, whitespace-normalized, deduped, non-empty.
+
+    Used as the OR'd substring patterns for the server-side LIKE filter.
+    Each pattern is later wrapped in % and case-folded by SoQL.
+    """
+    raw = [seed.distinctive, *seed.aliases]
+    out: list[str] = []
+    seen: set[str] = set()
+    for p in raw:
+        if not p:
+            continue
+        clean = " ".join(p.split())  # collapse internal whitespace
+        if not clean:
+            continue
+        key = clean.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(clean)
+    return out
+
+
+def _build_where(vendor_field: str, seed: VendorSeed) -> str:
+    """Server-side filter: OR across (distinctive + each alias).
+
+    This keeps the server-side filter as permissive as the client-side
+    matcher (which knows aliases). A previous version only OR'd the
+    distinctive phrase, which silently dropped recipients whose checkbook
+    spelling differs from our distinctive (e.g. checkbook says "Saint
+    Francis Center" but our distinctive is "St. Francis Center").
+    """
+    patterns = _patterns_for_seed(seed)
+    clauses = [
+        f"upper({vendor_field}) like upper('%{_sql_escape_literal(p)}%')"
+        for p in patterns
+    ]
+    return "(" + " OR ".join(clauses) + ")"
 
 
 def _select_clause(probe: dict) -> str:
@@ -119,7 +153,7 @@ def ingest_for_seed(
     amount_field = probe["resolved"]["amount_field"]
     date_field = probe["resolved"]["date_field"]
 
-    where = _build_where(vendor_field, seed.distinctive)
+    where = _build_where(vendor_field, seed)
     if since:
         where = f"({where}) AND {date_field} >= '{_sql_escape_literal(since)}'"
     select = _select_clause(probe)

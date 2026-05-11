@@ -10,8 +10,12 @@ from pathlib import Path
 
 import pytest
 
-from etl.sources.denver_checkbook.run import ingest_for_seed
-from etl.sources.denver_checkbook.vendor_seeds import SEEDS
+from etl.sources.denver_checkbook.run import (
+    _build_where,
+    _patterns_for_seed,
+    ingest_for_seed,
+)
+from etl.sources.denver_checkbook.vendor_seeds import SEEDS, VendorSeed
 
 SCHEMA_PATH = Path(__file__).resolve().parents[2] / "db" / "schema.sql"
 
@@ -160,3 +164,50 @@ def test_ingest_handles_voa_aliases(con):
     stats = ingest_for_seed(con=con, client=FakeClient(rows), probe=PROBE,
                             seed=_voa_seed(), since=None, max_rows=None)
     assert stats["inserted"] == 1
+
+
+# ----- _build_where ---------------------------------------------------------
+
+def test_build_where_ors_distinctive_and_aliases():
+    seed = VendorSeed(
+        canonical="Test Org",
+        distinctive="st. francis center",
+        aliases=["saint francis center", "st francis center"],
+    )
+    where = _build_where("payee", seed)
+    # All three patterns should be OR'd in
+    assert "st. francis center" in where
+    assert "saint francis center" in where
+    assert "st francis center" in where
+    assert " OR " in where
+    # Wrapped in parens for safe AND-composition later
+    assert where.startswith("(") and where.endswith(")")
+
+
+def test_build_where_no_aliases_still_works():
+    seed = VendorSeed(canonical="Solo Org", distinctive="solo phrase", aliases=[])
+    where = _build_where("payee", seed)
+    assert "solo phrase" in where
+    assert " OR " not in where  # only the distinctive
+
+
+def test_patterns_for_seed_dedups_case_insensitive():
+    seed = VendorSeed(
+        canonical="Dedup Org",
+        distinctive="acme corp",
+        aliases=["ACME Corp", "acme corp", "Acme  Corp"],  # case + whitespace variants
+    )
+    patterns = _patterns_for_seed(seed)
+    assert len(patterns) == 1
+    assert patterns[0].lower() == "acme corp"
+
+
+def test_build_where_escapes_single_quotes():
+    seed = VendorSeed(
+        canonical="O'Quote Org",
+        distinctive="o'reilly center",
+        aliases=[],
+    )
+    where = _build_where("payee", seed)
+    # SQL-safe: the literal must double the apostrophe so SoQL doesn't break
+    assert "o''reilly center" in where

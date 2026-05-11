@@ -25,9 +25,10 @@ export default function RecipientsPage() {
     );
   }
 
-  const { meta, recipients } = data;
+  const { meta, recipients, seeds } = data;
   const sorted = [...recipients].sort((a, b) => b.total_paid - a.total_paid);
   const sumTotal = sorted.reduce((acc, r) => acc + r.total_paid, 0);
+  const unmatchedSeeds = (seeds ?? []).filter((s) => !s.matched);
 
   return (
     <article className="prose-civic">
@@ -117,6 +118,36 @@ export default function RecipientsPage() {
                       </span>
                     )}
                   </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {unmatchedSeeds.length > 0 && (
+        <>
+          <h2>Curated seeds with no matched payments</h2>
+          <p>
+            These nonprofits are on our curated seed list but the most recent
+            ingest found zero matching Denver Checkbook payments. Common
+            reasons: the org is a sub-grantee paid through a larger nonprofit,
+            it&rsquo;s a regional/quasi-public entity not contracted directly
+            by the city, or our matching phrase needs widening. Listed for
+            curator transparency.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Canonical name</th>
+                <th>Curator note</th>
+              </tr>
+            </thead>
+            <tbody>
+              {unmatchedSeeds.map((s) => (
+                <tr key={s.canonical}>
+                  <td>{s.canonical}</td>
+                  <td style={{ color: "#57534e" }}>{s.notes || "—"}</td>
                 </tr>
               ))}
             </tbody>

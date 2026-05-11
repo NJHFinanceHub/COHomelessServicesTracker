@@ -25,6 +25,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
+from etl.sources.denver_checkbook.vendor_seeds import SEEDS
+
 
 def _per_recipient_summary(con: sqlite3.Connection) -> list[dict[str, Any]]:
     """Aggregate per-recipient: total, count, date range, by-year, top departments/funding."""
@@ -103,6 +105,25 @@ def _meta(con: sqlite3.Connection) -> dict[str, Any]:
     }
 
 
+def _seeds_summary(recipients: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Per-seed: did this seed match anything? With notes for curator review."""
+    by_canonical = {r["legal_name"]: r for r in recipients}
+    out = []
+    for s in SEEDS:
+        r = by_canonical.get(s.canonical)
+        out.append(
+            {
+                "canonical": s.canonical,
+                "distinctive": s.distinctive,
+                "notes": s.notes,
+                "matched": bool(r and r.get("n_payments", 0) > 0),
+                "n_payments": int(r["n_payments"]) if r else 0,
+                "total_paid": float(r["total_paid"]) if r else 0.0,
+            }
+        )
+    return out
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description="Compute and emit frontend JSON")
     p.add_argument("--db", required=True)
@@ -124,12 +145,17 @@ def main(argv: list[str] | None = None) -> int:
     finally:
         con.close()
 
-    payload = {"meta": meta, "recipients": recipients}
+    seeds = _seeds_summary(recipients)
+    matched_count = sum(1 for s in seeds if s["matched"])
+    meta["n_seeds"] = len(seeds)
+    meta["n_seeds_matched"] = matched_count
+
+    payload = {"meta": meta, "recipients": recipients, "seeds": seeds}
     out_path = out_dir / "recipients.json"
     out_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
     print(
         f"Wrote {out_path}: {meta['n_recipients']} recipients, "
-        f"{meta['n_payments']} payments."
+        f"{meta['n_payments']} payments, seeds matched {matched_count}/{len(seeds)}."
     )
     return 0
 

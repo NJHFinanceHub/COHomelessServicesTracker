@@ -5,6 +5,16 @@ on:
     # 09:17 UTC = 03:17 MDT (summer) / 02:17 MST (winter) — runs after city batch jobs settle.
     - cron: "17 9 * * *"
   workflow_dispatch:
+  push:
+    # Re-run when code changes; do NOT re-run on this workflow's own data commits.
+    branches:
+      - main
+      - 'claude/**'
+    paths-ignore:
+      - 'data/**'
+      - 'docs/**'
+      - '*.md'
+      - 'web/**'  # frontend-only changes don't need an ETL re-run
 
 concurrency:
   group: etl-nightly
@@ -13,6 +23,8 @@ concurrency:
 jobs:
   etl:
     runs-on: ubuntu-latest
+    # Skip the bot's own data commits as a belt-and-suspenders guard alongside paths-ignore.
+    if: github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip-etl]')
     permissions:
       contents: write
     steps:
@@ -46,7 +58,7 @@ jobs:
           git config user.email "bot@denver-tracker.local"
           git add -f data/raw/checkbook_columns.json
           if ! git diff --cached --quiet; then
-            git commit -m "data: refresh Denver checkbook column map"
+            git commit -m "data: refresh Denver checkbook column map [skip-etl]"
             git push
           else
             echo "Column map unchanged."
@@ -61,11 +73,22 @@ jobs:
       - name: Compute unit economics
         run: make compute
 
+      # --- Curator-loop output: top unmatched vendors ----------------------
+      # Surfaces large checkbook recipients that DIDN'T match a seed, so a
+      # human can grow the seed list. Goes into artifacts only (not committed)
+      # so we don't pollute the branch with churning CSVs.
+      - name: Scan for new candidates
+        env:
+          SOCRATA_APP_TOKEN: ${{ secrets.SOCRATA_APP_TOKEN }}
+        run: |
+          python -m etl.sources.denver_checkbook.scan \
+            --new-candidates --rows 20000 --top 200 || true
+
       - name: Commit refreshed processed data
         run: |
           git add data/processed
           if ! git diff --cached --quiet; then
-            git commit -m "data: nightly ETL refresh"
+            git commit -m "data: nightly ETL refresh [skip-etl]"
             git push
           else
             echo "No data changes."
