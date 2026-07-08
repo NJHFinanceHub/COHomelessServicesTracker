@@ -1,7 +1,7 @@
 {
   "dataset_id": "wnau-xrqi",
   "endpoint": "https://data.colorado.gov/resource/wnau-xrqi.json",
-  "fetched_at": "2026-07-07T12:08:46.196669+00:00",
+  "fetched_at": "2026-07-08T11:16:26.074805+00:00",
   "max_date": "2025-12-30T00:00:00.000",
   "min_date": "2025-01-02T00:00:00.000",
   "n_total_rows": 154596,
