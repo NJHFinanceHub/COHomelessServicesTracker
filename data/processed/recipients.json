@@ -835,8 +835,8 @@
     }
   ],
   "meta": {
-    "generated_at": "2026-08-04T11:33:24.166931+00:00",
-    "last_checkbook_fetch_at": "2026-08-04T11:33:24.083381+00:00",
+    "generated_at": "2026-08-05T11:28:34.184497+00:00",
+    "last_checkbook_fetch_at": "2026-08-05T11:28:34.094443+00:00",
     "n_payments": 2127,
     "n_recipients": 22,
     "n_seeds": 30,
@@ -983,22 +983,6 @@
       "n_payments": 323,
       "recent_payments": [
         {
-          "amount": 1200.0,
-          "date": "2025-12-29",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 8754.13,
-          "date": "2025-12-29",
-          "department": "Department of Housing Stability Special",
-          "description": "ARPA_HOST_House 1000_Rapid Reh",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "American Rescue Plan Act"
-        },
-        {
           "amount": 25138.22,
           "date": "2025-12-29",
           "department": "Department of Housing Stability Special",
@@ -1013,6 +997,22 @@
           "description": "Community Development",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 1200.0,
+          "date": "2025-12-29",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 8754.13,
+          "date": "2025-12-29",
+          "department": "Department of Housing Stability Special",
+          "description": "ARPA_HOST_House 1000_Rapid Reh",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "American Rescue Plan Act"
         },
         {
           "amount": 290.95,
@@ -1031,20 +1031,20 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 1840.23,
-          "date": "2025-12-22",
-          "department": "Department of Housing Stability Special",
-          "description": "The Salvation Army (ESG 1/1/20",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Emergency Solutions Grant"
-        },
-        {
           "amount": 1229.32,
           "date": "2025-12-22",
           "department": "Denver Department of Public Health and E",
           "description": "Health",
           "expense_category": "Professional Services",
           "funding_source": "Healthy Foods for Denver's Kid"
+        },
+        {
+          "amount": 1840.23,
+          "date": "2025-12-22",
+          "department": "Department of Housing Stability Special",
+          "description": "The Salvation Army (ESG 1/1/20",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Emergency Solutions Grant"
         },
         {
           "amount": 19613.38,
@@ -1055,36 +1055,12 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 16538.34,
+          "amount": 37635.0,
           "date": "2025-12-18",
           "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 4036.64,
-          "date": "2025-12-18",
-          "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
-          "amount": 58538.77,
-          "date": "2025-12-18",
-          "department": "Department of Housing Stability Special",
-          "description": "The Salvation Army - Tamarac -",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Federal Grant - Other - Commun"
-        },
-        {
-          "amount": 721.41,
-          "date": "2025-12-18",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "General Fund"
+          "funding_source": "Homelessness Resolution"
         },
         {
           "amount": 278.67,
@@ -1095,6 +1071,30 @@
           "funding_source": "Healthy Foods for Denver's Kid"
         },
         {
+          "amount": 358234.74,
+          "date": "2025-12-18",
+          "department": "Department of Housing Stability Special",
+          "description": "ARPA_HOST_House 1000_Rapid Reh",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "American Rescue Plan Act"
+        },
+        {
+          "amount": 16538.34,
+          "date": "2025-12-18",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 721.41,
+          "date": "2025-12-18",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "General Fund"
+        },
+        {
           "amount": 33582.0,
           "date": "2025-12-18",
           "department": "Department of Housing Stability Special",
@@ -1103,20 +1103,20 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 37635.0,
+          "amount": 58538.77,
           "date": "2025-12-18",
           "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
+          "description": "The Salvation Army - Tamarac -",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Federal Grant - Other - Commun"
         },
         {
-          "amount": 15600.45,
+          "amount": 4036.64,
           "date": "2025-12-18",
-          "department": "Department of Housing Stability Special",
+          "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
+          "funding_source": "General Fund"
         },
         {
           "amount": 9978.85,
@@ -1127,12 +1127,12 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 358234.74,
+          "amount": 15600.45,
           "date": "2025-12-18",
           "department": "Department of Housing Stability Special",
-          "description": "ARPA_HOST_House 1000_Rapid Reh",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "American Rescue Plan Act"
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
         },
         {
           "amount": 318023.54,
@@ -1151,12 +1151,12 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 319228.1,
+          "amount": 8625.68,
           "date": "2025-12-10",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
+          "department": "District Attorney Office",
+          "description": "FY24 Byrne Salvation Army Suba",
+          "expense_category": "Leases and Rentals",
+          "funding_source": "Federal Grants - District Atto"
         },
         {
           "amount": 2988.86,
@@ -1167,12 +1167,12 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 8625.68,
+          "amount": 319228.1,
           "date": "2025-12-10",
-          "department": "District Attorney Office",
-          "description": "FY24 Byrne Salvation Army Suba",
-          "expense_category": "Leases and Rentals",
-          "funding_source": "Federal Grants - District Atto"
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
         },
         {
           "amount": 14055.58,
@@ -1191,22 +1191,6 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 1854.52,
-          "date": "2025-12-05",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 602.78,
-          "date": "2025-12-05",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
           "amount": 353248.83,
           "date": "2025-12-05",
           "department": "Department of Housing Stability Special",
@@ -1221,6 +1205,22 @@
           "description": "Community Development",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 1854.52,
+          "date": "2025-12-05",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 602.78,
+          "date": "2025-12-05",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
         },
         {
           "amount": 24531.0,
@@ -1335,14 +1335,6 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 16804.86,
-          "date": "2025-11-20",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
           "amount": 278700.18,
           "date": "2025-11-20",
           "department": "Department of Housing Stability Special",
@@ -1351,16 +1343,16 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 1884.47,
+          "amount": 16804.86,
           "date": "2025-11-20",
-          "department": "Department of Housing Stability Special",
-          "description": "ARPA_HOST_House 1000_Rapid Reh",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "American Rescue Plan Act"
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
         },
         {
-          "amount": 1175.23,
-          "date": "2025-11-19",
+          "amount": 1884.47,
+          "date": "2025-11-20",
           "department": "Department of Housing Stability Special",
           "description": "ARPA_HOST_House 1000_Rapid Reh",
           "expense_category": "Grant Award To Subrecipient",
@@ -1381,6 +1373,14 @@
           "description": "Community Development",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 1175.23,
+          "date": "2025-11-19",
+          "department": "Department of Housing Stability Special",
+          "description": "ARPA_HOST_House 1000_Rapid Reh",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "American Rescue Plan Act"
         }
       ],
       "slug": "the-salvation-army",
@@ -1598,20 +1598,20 @@
           "funding_source": "Affordable Housing Property Ta"
         },
         {
-          "amount": 7206.4,
-          "date": "2025-11-21",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
           "amount": 316140.32,
           "date": "2025-11-21",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "General Fund"
+        },
+        {
+          "amount": 7206.4,
+          "date": "2025-11-21",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
         },
         {
           "amount": 26774.23,
@@ -1630,7 +1630,7 @@
           "funding_source": "American Rescue Plan Act"
         },
         {
-          "amount": 37076.33,
+          "amount": 18756.38,
           "date": "2025-11-14",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -1638,7 +1638,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 18756.38,
+          "amount": 37076.33,
           "date": "2025-11-14",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -1678,7 +1678,7 @@
           "funding_source": "Crime Prevention/Control Fund"
         },
         {
-          "amount": 9788.56,
+          "amount": 8750.67,
           "date": "2025-10-24",
           "department": "Service Delivery and Administration",
           "description": "The Colorado Coalition For The",
@@ -1686,7 +1686,7 @@
           "funding_source": "Community Service Block Grant"
         },
         {
-          "amount": 8750.67,
+          "amount": 9788.56,
           "date": "2025-10-24",
           "department": "Service Delivery and Administration",
           "description": "The Colorado Coalition For The",
@@ -1710,6 +1710,14 @@
           "funding_source": "Healthy Foods for Denver's Kid"
         },
         {
+          "amount": 264793.26,
+          "date": "2025-10-15",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
+        },
+        {
           "amount": 28713.26,
           "date": "2025-10-15",
           "department": "Department of Housing Stability Special",
@@ -1724,14 +1732,6 @@
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 264793.26,
-          "date": "2025-10-15",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
         },
         {
           "amount": 359146.03,
@@ -1766,6 +1766,14 @@
           "funding_source": "Homelessness Resolution"
         },
         {
+          "amount": 5000.0,
+          "date": "2025-09-30",
+          "department": "Denver Department of Public Health and E",
+          "description": "House 1000 Subaward THE COLORA",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Health Private and Other Grant"
+        },
+        {
           "amount": 29186.92,
           "date": "2025-09-30",
           "department": "Denver Department of Public Health and E",
@@ -1780,14 +1788,6 @@
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "General Fund"
-        },
-        {
-          "amount": 5000.0,
-          "date": "2025-09-30",
-          "department": "Denver Department of Public Health and E",
-          "description": "House 1000 Subaward THE COLORA",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Health Private and Other Grant"
         },
         {
           "amount": 103579.24,
@@ -1806,6 +1806,14 @@
           "funding_source": "American Rescue Plan Act"
         },
         {
+          "amount": 4500.0,
+          "date": "2025-09-12",
+          "department": "Safety Administration",
+          "description": "Public Safety",
+          "expense_category": "Professional Services",
+          "funding_source": "Crime Prevention/Control Fund"
+        },
+        {
           "amount": 20780.72,
           "date": "2025-09-12",
           "department": "Department of Housing Stability Special",
@@ -1820,14 +1828,6 @@
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "General Fund"
-        },
-        {
-          "amount": 4500.0,
-          "date": "2025-09-12",
-          "department": "Safety Administration",
-          "description": "Public Safety",
-          "expense_category": "Professional Services",
-          "funding_source": "Crime Prevention/Control Fund"
         },
         {
           "amount": 9650.54,
@@ -1862,14 +1862,6 @@
           "funding_source": "Health Private and Other Grant"
         },
         {
-          "amount": 24377.05,
-          "date": "2025-08-28",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
           "amount": 21044.82,
           "date": "2025-08-28",
           "department": "Denver Department of Public Health and E",
@@ -1878,12 +1870,20 @@
           "funding_source": "American Rescue Plan Act"
         },
         {
-          "amount": 29962.52,
-          "date": "2025-08-25",
+          "amount": 24377.05,
+          "date": "2025-08-28",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "General Fund"
+        },
+        {
+          "amount": 12850.97,
+          "date": "2025-08-25",
+          "department": "Service Delivery and Administration",
+          "description": "The Colorado Coalition For The",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Community Service Block Grant"
         }
       ],
       "slug": "colorado-coalition-for-the-homeless",
@@ -1929,7 +1929,7 @@
       "n_payments": 56,
       "recent_payments": [
         {
-          "amount": 29958.02,
+          "amount": 41957.26,
           "date": "2025-12-17",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -1937,7 +1937,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 41957.26,
+          "amount": 29958.02,
           "date": "2025-12-17",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -1977,7 +1977,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 39358.88,
+          "amount": 776703.85,
           "date": "2025-11-14",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -1985,7 +1985,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 776703.85,
+          "amount": 39358.88,
           "date": "2025-11-14",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2009,7 +2009,7 @@
           "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
-          "amount": 50254.93,
+          "amount": 19276.39,
           "date": "2025-10-15",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2025,14 +2025,6 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 19276.39,
-          "date": "2025-10-15",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
           "amount": 808831.69,
           "date": "2025-10-15",
           "department": "Department of Housing Stability Special",
@@ -2041,15 +2033,15 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 860354.39,
-          "date": "2025-09-12",
+          "amount": 50254.93,
+          "date": "2025-10-15",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 23716.57,
+          "amount": 44564.36,
           "date": "2025-09-12",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2065,7 +2057,15 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 44564.36,
+          "amount": 23716.57,
+          "date": "2025-09-12",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 860354.39,
           "date": "2025-09-12",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2081,7 +2081,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 1453.82,
+          "amount": 1353.39,
           "date": "2025-07-31",
           "department": "Department of Housing Stability Special",
           "description": "Denver Rescue Mission (BPX 10/",
@@ -2089,7 +2089,7 @@
           "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
-          "amount": 1353.39,
+          "amount": 1453.82,
           "date": "2025-07-31",
           "department": "Department of Housing Stability Special",
           "description": "Denver Rescue Mission (BPX 10/",
@@ -2105,12 +2105,12 @@
           "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
-          "amount": 40797.35,
+          "amount": 14438.3,
           "date": "2025-07-30",
           "department": "Department of Housing Stability Special",
-          "description": "Community Development",
+          "description": "Denver Rescue Mission (BPX 10/",
           "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
+          "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
           "amount": 27413.63,
@@ -2129,15 +2129,15 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 14438.3,
+          "amount": 900544.17,
           "date": "2025-07-30",
           "department": "Department of Housing Stability Special",
-          "description": "Denver Rescue Mission (BPX 10/",
+          "description": "Community Development",
           "expense_category": "Professional Services",
-          "funding_source": "Homeless Shelter Utility Suppo"
+          "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 900544.17,
+          "amount": 40797.35,
           "date": "2025-07-30",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2185,6 +2185,14 @@
           "funding_source": "Homelessness Resolution"
         },
         {
+          "amount": 47690.75,
+          "date": "2025-06-13",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
           "amount": 41540.7,
           "date": "2025-06-13",
           "department": "Department of Housing Stability Special",
@@ -2194,14 +2202,6 @@
         },
         {
           "amount": 24859.29,
-          "date": "2025-06-13",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 47690.75,
           "date": "2025-06-13",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2241,6 +2241,14 @@
           "funding_source": "Homelessness Resolution"
         },
         {
+          "amount": 45993.15,
+          "date": "2025-04-16",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
           "amount": 40316.53,
           "date": "2025-04-16",
           "department": "Department of Housing Stability Special",
@@ -2258,14 +2266,6 @@
         },
         {
           "amount": 19604.08,
-          "date": "2025-04-16",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 45993.15,
           "date": "2025-04-16",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2313,7 +2313,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 338211.18,
+          "amount": 36340.79,
           "date": "2025-02-14",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2321,7 +2321,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 36340.79,
+          "amount": 2431.35,
           "date": "2025-02-14",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2456,6 +2456,14 @@
           "funding_source": "General Fund"
         },
         {
+          "amount": 191552.77,
+          "date": "2025-11-21",
+          "department": "Denver Department of Public Health and E",
+          "description": "Health",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
+        },
+        {
           "amount": 7132.8,
           "date": "2025-11-21",
           "department": "Denver Department of Public Health and E",
@@ -2465,14 +2473,6 @@
         },
         {
           "amount": 66743.27,
-          "date": "2025-11-21",
-          "department": "Denver Department of Public Health and E",
-          "description": "Health",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
-          "amount": 191552.77,
           "date": "2025-11-21",
           "department": "Denver Department of Public Health and E",
           "description": "Health",
@@ -2552,14 +2552,6 @@
           "funding_source": "Health Private and Other Grant"
         },
         {
-          "amount": 75406.23,
-          "date": "2025-09-19",
-          "department": "Denver Department of Public Health and E",
-          "description": "Health",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
           "amount": 159165.82,
           "date": "2025-09-19",
           "department": "Police Department",
@@ -2576,20 +2568,20 @@
           "funding_source": "General Fund"
         },
         {
+          "amount": 75406.23,
+          "date": "2025-09-19",
+          "department": "Denver Department of Public Health and E",
+          "description": "Health",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
+        },
+        {
           "amount": 72055.07,
           "date": "2025-08-28",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Business Housing and Construct",
           "funding_source": "Affordable Housing Linkage Fee"
-        },
-        {
-          "amount": 324144.45,
-          "date": "2025-08-15",
-          "department": "Denver Department of Public Health and E",
-          "description": "Health",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
         },
         {
           "amount": 186825.83,
@@ -2600,20 +2592,12 @@
           "funding_source": "Safety Private Grants"
         },
         {
-          "amount": 16949.57,
-          "date": "2025-08-14",
-          "department": "Police Department",
-          "description": "FY24 DPD Co-Responder WELLPOWE",
+          "amount": 324144.45,
+          "date": "2025-08-15",
+          "department": "Denver Department of Public Health and E",
+          "description": "Health",
           "expense_category": "Professional Services",
-          "funding_source": "Safety Private Grants"
-        },
-        {
-          "amount": 33856.99,
-          "date": "2025-08-14",
-          "department": "Police Department",
-          "description": "FY24 DPD Co-Responder WELLPOWE",
-          "expense_category": "Professional Services",
-          "funding_source": "Safety Private Grants"
+          "funding_source": "General Fund"
         },
         {
           "amount": 26708.33,
@@ -2640,12 +2624,20 @@
           "funding_source": "Safety Private Grants"
         },
         {
-          "amount": 14613.72,
-          "date": "2025-08-01",
-          "department": "Undersheriff",
-          "description": "Public Safety",
+          "amount": 33856.99,
+          "date": "2025-08-14",
+          "department": "Police Department",
+          "description": "FY24 DPD Co-Responder WELLPOWE",
           "expense_category": "Professional Services",
-          "funding_source": "Inmate Processing Fees"
+          "funding_source": "Safety Private Grants"
+        },
+        {
+          "amount": 16949.57,
+          "date": "2025-08-14",
+          "department": "Police Department",
+          "description": "FY24 DPD Co-Responder WELLPOWE",
+          "expense_category": "Professional Services",
+          "funding_source": "Safety Private Grants"
         },
         {
           "amount": 32357.47,
@@ -2654,6 +2646,14 @@
           "description": "Community Development",
           "expense_category": "Business Housing and Construct",
           "funding_source": "Affordable Housing Linkage Fee"
+        },
+        {
+          "amount": 14613.72,
+          "date": "2025-08-01",
+          "department": "Undersheriff",
+          "description": "Public Safety",
+          "expense_category": "Professional Services",
+          "funding_source": "Inmate Processing Fees"
         },
         {
           "amount": 3500.0,
@@ -2688,12 +2688,12 @@
           "funding_source": "Affordable Housing Linkage Fee"
         },
         {
-          "amount": 205928.9,
+          "amount": 2532.58,
           "date": "2025-07-18",
-          "department": "Police Department",
-          "description": "FY24 DPD Co-Responder WELLPOWE",
-          "expense_category": "Professional Services",
-          "funding_source": "Safety Private Grants"
+          "department": "Denver Department of Public Health and E",
+          "description": "MHCD STAR '24-26",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Health Private and Other Grant"
         },
         {
           "amount": 84219.45,
@@ -2704,12 +2704,12 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 2532.58,
+          "amount": 205928.9,
           "date": "2025-07-18",
-          "department": "Denver Department of Public Health and E",
-          "description": "MHCD STAR '24-26",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Health Private and Other Grant"
+          "department": "Police Department",
+          "description": "FY24 DPD Co-Responder WELLPOWE",
+          "expense_category": "Professional Services",
+          "funding_source": "Safety Private Grants"
         },
         {
           "amount": 354946.18,
@@ -2720,7 +2720,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 5451.16,
+          "amount": 789.2,
           "date": "2025-07-10",
           "department": "Denver Department of Public Health and E",
           "description": "Health",
@@ -2728,7 +2728,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 789.2,
+          "amount": 5451.16,
           "date": "2025-07-10",
           "department": "Denver Department of Public Health and E",
           "description": "Health",
@@ -2919,7 +2919,7 @@
           "funding_source": "Head Start"
         },
         {
-          "amount": 140090.54,
+          "amount": 78924.5,
           "date": "2025-12-17",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2935,7 +2935,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 78924.5,
+          "amount": 140090.54,
           "date": "2025-12-17",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2943,7 +2943,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 91780.83,
+          "amount": 33112.23,
           "date": "2025-12-12",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2951,7 +2951,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 33112.23,
+          "amount": 1696.25,
           "date": "2025-12-12",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2967,7 +2967,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 1696.25,
+          "amount": 91780.83,
           "date": "2025-12-12",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -2999,6 +2999,14 @@
           "funding_source": "Homelessness Resolution"
         },
         {
+          "amount": 5079.33,
+          "date": "2025-11-21",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
           "amount": 32749.42,
           "date": "2025-11-21",
           "department": "Department of Housing Stability Special",
@@ -3015,15 +3023,47 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 5079.33,
-          "date": "2025-11-21",
+          "amount": 20895.71,
+          "date": "2025-11-14",
+          "department": "Head Start",
+          "description": "Head Start Catholic Charities",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Head Start"
+        },
+        {
+          "amount": 54888.58,
+          "date": "2025-11-14",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "Homelessness Resolution"
         },
         {
+          "amount": 25539.79,
+          "date": "2025-11-14",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 143731.57,
+          "date": "2025-11-14",
+          "department": "Head Start",
+          "description": "Head Start Catholic Charities",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Head Start"
+        },
+        {
           "amount": 110208.4,
+          "date": "2025-11-14",
+          "department": "Head Start",
+          "description": "Head Start Catholic Charities",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Head Start"
+        },
+        {
+          "amount": 21010.98,
           "date": "2025-11-14",
           "department": "Head Start",
           "description": "Head Start Catholic Charities",
@@ -3039,40 +3079,8 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 54888.58,
-          "date": "2025-11-14",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 21010.98,
-          "date": "2025-11-14",
-          "department": "Head Start",
-          "description": "Head Start Catholic Charities",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Head Start"
-        },
-        {
-          "amount": 143731.57,
-          "date": "2025-11-14",
-          "department": "Head Start",
-          "description": "Head Start Catholic Charities",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Head Start"
-        },
-        {
-          "amount": 20895.71,
-          "date": "2025-11-14",
-          "department": "Head Start",
-          "description": "Head Start Catholic Charities",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Head Start"
-        },
-        {
-          "amount": 25539.79,
-          "date": "2025-11-14",
+          "amount": 7374.51,
+          "date": "2025-11-13",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
@@ -3087,15 +3095,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 7374.51,
-          "date": "2025-11-13",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 150608.61,
+          "amount": 38286.87,
           "date": "2025-11-12",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -3111,16 +3111,8 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 38286.87,
+          "amount": 150608.61,
           "date": "2025-11-12",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 69288.53,
-          "date": "2025-10-31",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
@@ -3143,8 +3135,8 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 40666.59,
-          "date": "2025-10-30",
+          "amount": 69288.53,
+          "date": "2025-10-31",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
@@ -3152,6 +3144,14 @@
         },
         {
           "amount": 155357.64,
+          "date": "2025-10-30",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 40666.59,
           "date": "2025-10-30",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -3183,7 +3183,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 910.53,
+          "amount": 13096.78,
           "date": "2025-10-20",
           "department": "Head Start",
           "description": "Head Start Catholic Charities",
@@ -3191,7 +3191,7 @@
           "funding_source": "Head Start"
         },
         {
-          "amount": 13096.78,
+          "amount": 910.53,
           "date": "2025-10-20",
           "department": "Head Start",
           "description": "Head Start Catholic Charities",
@@ -3207,7 +3207,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 33471.68,
+          "amount": 101370.98,
           "date": "2025-10-16",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -3215,7 +3215,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 101370.98,
+          "amount": 33471.68,
           "date": "2025-10-16",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -3231,14 +3231,6 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 72388.04,
-          "date": "2025-10-03",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
           "amount": 37490.03,
           "date": "2025-10-03",
           "department": "Department of Housing Stability Special",
@@ -3247,7 +3239,15 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 74732.69,
+          "amount": 72388.04,
+          "date": "2025-10-03",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 33056.4,
           "date": "2025-09-26",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -3263,7 +3263,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 70541.93,
+          "amount": 74732.69,
           "date": "2025-09-26",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -3271,7 +3271,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 33056.4,
+          "amount": 70541.93,
           "date": "2025-09-26",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -3295,7 +3295,7 @@
           "funding_source": "Affordable Housing Linkage Fee"
         },
         {
-          "amount": 9931.87,
+          "amount": 65706.28,
           "date": "2025-09-15",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -3533,7 +3533,7 @@
           "funding_source": "American Rescue Plan Act"
         },
         {
-          "amount": 202290.0,
+          "amount": 21088.25,
           "date": "2025-12-22",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -3541,7 +3541,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 21088.25,
+          "amount": 202290.0,
           "date": "2025-12-22",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -3565,6 +3565,14 @@
           "funding_source": "General Fund"
         },
         {
+          "amount": 9368.7,
+          "date": "2025-12-09",
+          "department": "Department of Housing Stability Special",
+          "description": "Volunteers of America (ESG 1/1",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Emergency Solutions Grant"
+        },
+        {
           "amount": 2970.0,
           "date": "2025-12-09",
           "department": "Department of Housing Stability Special",
@@ -3574,14 +3582,6 @@
         },
         {
           "amount": 9058.67,
-          "date": "2025-12-09",
-          "department": "Department of Housing Stability Special",
-          "description": "Volunteers of America (ESG 1/1",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Emergency Solutions Grant"
-        },
-        {
-          "amount": 9368.7,
           "date": "2025-12-09",
           "department": "Department of Housing Stability Special",
           "description": "Volunteers of America (ESG 1/1",
@@ -3605,6 +3605,14 @@
           "funding_source": "Head Start"
         },
         {
+          "amount": 2891.96,
+          "date": "2025-12-02",
+          "department": "Department of Housing Stability Special",
+          "description": "Volunteers of America (ESG 1/1",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Emergency Solutions Grant"
+        },
+        {
           "amount": 8042.11,
           "date": "2025-12-02",
           "department": "Department of Housing Stability (HOST)",
@@ -3621,14 +3629,6 @@
           "funding_source": "Emergency Solutions Grant"
         },
         {
-          "amount": 2891.96,
-          "date": "2025-12-02",
-          "department": "Department of Housing Stability Special",
-          "description": "Volunteers of America (ESG 1/1",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Emergency Solutions Grant"
-        },
-        {
           "amount": 10851.12,
           "date": "2025-12-02",
           "department": "Department of Housing Stability Special",
@@ -3637,7 +3637,7 @@
           "funding_source": "Emergency Solutions Grant"
         },
         {
-          "amount": 15528.11,
+          "amount": 683.04,
           "date": "2025-11-24",
           "department": "Department of Housing Stability Special",
           "description": "Volunteers of America (ESG 1/1",
@@ -3653,7 +3653,7 @@
           "funding_source": "Emergency Solutions Grant"
         },
         {
-          "amount": 683.04,
+          "amount": 15528.11,
           "date": "2025-11-24",
           "department": "Department of Housing Stability Special",
           "description": "Volunteers of America (ESG 1/1",
@@ -3749,7 +3749,7 @@
           "funding_source": "Climate Protection"
         },
         {
-          "amount": 49419.36,
+          "amount": 17729.34,
           "date": "2025-10-14",
           "department": "Head Start",
           "description": "Head Start Volunteers of Ameri",
@@ -3773,7 +3773,7 @@
           "funding_source": "Head Start"
         },
         {
-          "amount": 17729.34,
+          "amount": 49419.36,
           "date": "2025-10-14",
           "department": "Head Start",
           "description": "Head Start Volunteers of Ameri",
@@ -3853,7 +3853,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 25890.46,
+          "amount": 55627.41,
           "date": "2025-09-08",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -3861,7 +3861,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 55627.41,
+          "amount": 25890.46,
           "date": "2025-09-08",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -3885,28 +3885,20 @@
           "funding_source": "American Rescue Plan Act"
         },
         {
-          "amount": 7052.12,
-          "date": "2025-08-22",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
-          "amount": 30.0,
-          "date": "2025-08-22",
-          "department": "Department of Housing Stability Special",
-          "description": "Volunteers of America (ESG 1/1",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Emergency Solutions Grant"
-        },
-        {
           "amount": 80731.44,
           "date": "2025-08-22",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "General Fund"
+        },
+        {
+          "amount": 10868.91,
+          "date": "2025-08-22",
+          "department": "Department of Housing Stability Special",
+          "description": "Volunteers of America (ESG 1/1",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Emergency Solutions Grant"
         },
         {
           "amount": 12105.0,
@@ -3917,7 +3909,15 @@
           "funding_source": "Emergency Solutions Grant"
         },
         {
-          "amount": 10868.91,
+          "amount": 7052.12,
+          "date": "2025-08-22",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
+        },
+        {
+          "amount": 30.0,
           "date": "2025-08-22",
           "department": "Department of Housing Stability Special",
           "description": "Volunteers of America (ESG 1/1",
@@ -4040,7 +4040,7 @@
           "funding_source": "Affordable Housing and Remedia"
         },
         {
-          "amount": 347.54,
+          "amount": 399.56,
           "date": "2025-12-18",
           "department": "Denver Economic Development and Opportun",
           "description": "General Government",
@@ -4056,7 +4056,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 399.56,
+          "amount": 347.54,
           "date": "2025-12-18",
           "department": "Denver Economic Development and Opportun",
           "description": "General Government",
@@ -4128,7 +4128,7 @@
           "funding_source": "CDBG"
         },
         {
-          "amount": 6866.29,
+          "amount": 4740.32,
           "date": "2025-11-26",
           "department": "Division of Workforce Development",
           "description": "FY25 - Brothers Redevelopment/",
@@ -4136,7 +4136,7 @@
           "funding_source": "CDBG"
         },
         {
-          "amount": 4740.32,
+          "amount": 6866.29,
           "date": "2025-11-26",
           "department": "Division of Workforce Development",
           "description": "FY25 - Brothers Redevelopment/",
@@ -4160,6 +4160,14 @@
           "funding_source": "General Fund"
         },
         {
+          "amount": 7795.26,
+          "date": "2025-11-14",
+          "department": "Division of Workforce Development",
+          "description": "FY25 - Brothers Redevelopment/",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "CDBG"
+        },
+        {
           "amount": 46608.41,
           "date": "2025-11-14",
           "department": "Department of Housing Stability (HOST)",
@@ -4176,15 +4184,7 @@
           "funding_source": "Property Tax Rebate"
         },
         {
-          "amount": 7795.26,
-          "date": "2025-11-14",
-          "department": "Division of Workforce Development",
-          "description": "FY25 - Brothers Redevelopment/",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "CDBG"
-        },
-        {
-          "amount": 7688.76,
+          "amount": 8180.35,
           "date": "2025-11-13",
           "department": "Division of Workforce Development",
           "description": "FY25 - Brothers Redevelopment/",
@@ -4192,7 +4192,7 @@
           "funding_source": "CDBG"
         },
         {
-          "amount": 8180.35,
+          "amount": 7688.76,
           "date": "2025-11-13",
           "department": "Division of Workforce Development",
           "description": "FY25 - Brothers Redevelopment/",
@@ -4256,20 +4256,20 @@
           "funding_source": "Affordable Housing and Remedia"
         },
         {
-          "amount": 68488.97,
-          "date": "2025-10-17",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Temporary Housing Assistance",
-          "funding_source": "Affordable Housing Property Ta"
-        },
-        {
           "amount": 12642.96,
           "date": "2025-10-17",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Mortgage Assistance",
           "funding_source": "Property Tax Rebate"
+        },
+        {
+          "amount": 68488.97,
+          "date": "2025-10-17",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Temporary Housing Assistance",
+          "funding_source": "Affordable Housing Property Ta"
         },
         {
           "amount": 21350.67,
@@ -4304,12 +4304,12 @@
           "funding_source": "Affordable Housing Property Ta"
         },
         {
-          "amount": 13256.97,
+          "amount": 86139.19,
           "date": "2025-09-19",
-          "department": "Department of Housing Stability Special",
+          "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Mortgage Assistance",
-          "funding_source": "Property Tax Rebate"
+          "funding_source": "General Fund"
         },
         {
           "amount": 65784.53,
@@ -4320,12 +4320,12 @@
           "funding_source": "Affordable Housing Property Ta"
         },
         {
-          "amount": 86139.19,
+          "amount": 13256.97,
           "date": "2025-09-19",
-          "department": "Department of Housing Stability (HOST)",
+          "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Mortgage Assistance",
-          "funding_source": "General Fund"
+          "funding_source": "Property Tax Rebate"
         },
         {
           "amount": 694.01,
@@ -4368,20 +4368,20 @@
           "funding_source": "Property Tax Rebate"
         },
         {
-          "amount": 68904.52,
-          "date": "2025-08-22",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Temporary Housing Assistance",
-          "funding_source": "Affordable Housing Property Ta"
-        },
-        {
           "amount": 37088.04,
           "date": "2025-08-22",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Mortgage Assistance",
           "funding_source": "General Fund"
+        },
+        {
+          "amount": 68904.52,
+          "date": "2025-08-22",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Temporary Housing Assistance",
+          "funding_source": "Affordable Housing Property Ta"
         },
         {
           "amount": 465.45,
@@ -4408,20 +4408,20 @@
           "funding_source": "American Rescue Plan Act"
         },
         {
-          "amount": 100000.0,
-          "date": "2025-07-17",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Mortgage Assistance",
-          "funding_source": "Property Tax Rebate"
-        },
-        {
           "amount": 22981.72,
           "date": "2025-07-17",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Mortgage Assistance",
           "funding_source": "General Fund"
+        },
+        {
+          "amount": 106124.57,
+          "date": "2025-07-17",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Temporary Housing Assistance",
+          "funding_source": "Affordable Housing Property Ta"
         }
       ],
       "slug": "brothers-redevelopment-inc",
@@ -4535,20 +4535,20 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 21038.4,
-          "date": "2025-12-12",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
           "amount": 24360.24,
           "date": "2025-12-12",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 21038.4,
+          "date": "2025-12-12",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
         },
         {
           "amount": 31813.58,
@@ -4575,7 +4575,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 21430.28,
+          "amount": 35499.04,
           "date": "2025-12-04",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -4583,7 +4583,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 35499.04,
+          "amount": 21430.28,
           "date": "2025-12-04",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -4607,14 +4607,6 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 26397.15,
-          "date": "2025-11-20",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
           "amount": 26780.43,
           "date": "2025-11-20",
           "department": "Department of Housing Stability (HOST)",
@@ -4623,12 +4615,12 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 22240.56,
-          "date": "2025-10-03",
-          "department": "Department of Housing Stability (HOST)",
+          "amount": 26397.15,
+          "date": "2025-11-20",
+          "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
-          "funding_source": "General Fund"
+          "funding_source": "Homelessness Resolution"
         },
         {
           "amount": 27201.82,
@@ -4639,8 +4631,24 @@
           "funding_source": "Homelessness Resolution"
         },
         {
+          "amount": 22240.56,
+          "date": "2025-10-03",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
+        },
+        {
           "amount": 771.19,
           "date": "2025-10-03",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
+        },
+        {
+          "amount": 70014.38,
+          "date": "2025-09-30",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
@@ -4653,14 +4661,6 @@
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 70014.38,
-          "date": "2025-09-30",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
         },
         {
           "amount": 24346.57,
@@ -4687,20 +4687,20 @@
           "funding_source": "Federal Grant - Other - Commun"
         },
         {
-          "amount": 17010.26,
-          "date": "2025-09-19",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
           "amount": 34733.65,
           "date": "2025-09-19",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "General Fund"
+        },
+        {
+          "amount": 17010.26,
+          "date": "2025-09-19",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
         },
         {
           "amount": 68079.97,
@@ -4807,20 +4807,20 @@
           "funding_source": "American Rescue Plan Act"
         },
         {
-          "amount": 128294.07,
-          "date": "2025-07-30",
-          "department": "Airport",
-          "description": "Airport",
-          "expense_category": "Professional Services",
-          "funding_source": "Airport Operations & Maintenan"
-        },
-        {
           "amount": 373.69,
           "date": "2025-07-30",
           "department": "Service Delivery and Administration",
           "description": "ARPA_Promotora Pilot_DHS",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "American Rescue Plan Act"
+        },
+        {
+          "amount": 128294.07,
+          "date": "2025-07-30",
+          "department": "Airport",
+          "description": "Airport",
+          "expense_category": "Professional Services",
+          "funding_source": "Airport Operations & Maintenan"
         },
         {
           "amount": 8100.93,
@@ -4831,14 +4831,6 @@
           "funding_source": "American Rescue Plan Act"
         },
         {
-          "amount": 33132.09,
-          "date": "2025-07-11",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
           "amount": 68517.53,
           "date": "2025-07-11",
           "department": "Department of Housing Stability (HOST)",
@@ -4847,20 +4839,20 @@
           "funding_source": "General Fund"
         },
         {
+          "amount": 33132.09,
+          "date": "2025-07-11",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
           "amount": 75659.07,
           "date": "2025-07-09",
           "department": "Human Services Developmental Disabilitie",
           "description": "Human Services",
           "expense_category": "Professional Services",
           "funding_source": "Board / Developmentally Disabl"
-        },
-        {
-          "amount": 148837.87,
-          "date": "2025-07-08",
-          "department": "Department of Housing Stability Special",
-          "description": "Bayaud Works LLC - Radisson",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Federal Grant - Other - Commun"
         },
         {
           "amount": 81203.82,
@@ -4872,6 +4864,14 @@
         },
         {
           "amount": 67641.56,
+          "date": "2025-07-08",
+          "department": "Department of Housing Stability Special",
+          "description": "Bayaud Works LLC - Radisson",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Federal Grant - Other - Commun"
+        },
+        {
+          "amount": 148837.87,
           "date": "2025-07-08",
           "department": "Department of Housing Stability Special",
           "description": "Bayaud Works LLC - Radisson",
@@ -4895,20 +4895,20 @@
           "funding_source": "American Rescue Plan Act"
         },
         {
-          "amount": 59084.01,
-          "date": "2025-06-23",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
           "amount": 33168.83,
           "date": "2025-06-23",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 59084.01,
+          "date": "2025-06-23",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
         },
         {
           "amount": 69573.56,
@@ -5130,20 +5130,20 @@
           "funding_source": "Service Delivery and Administr"
         },
         {
-          "amount": 3690.55,
-          "date": "2025-10-29",
-          "department": "Department of Housing Stability Special",
-          "description": "St. Francis Center (BPX 10/01/",
-          "expense_category": "Professional Services",
-          "funding_source": "Homeless Shelter Utility Suppo"
-        },
-        {
           "amount": 32355.4,
           "date": "2025-10-29",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "General Fund"
+        },
+        {
+          "amount": 3690.55,
+          "date": "2025-10-29",
+          "department": "Department of Housing Stability Special",
+          "description": "St. Francis Center (BPX 10/01/",
+          "expense_category": "Professional Services",
+          "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
           "amount": 23799.23,
@@ -5160,6 +5160,22 @@
           "description": "St. Francis Center (BPX 10/01/",
           "expense_category": "Professional Services",
           "funding_source": "Homeless Shelter Utility Suppo"
+        },
+        {
+          "amount": 253218.05,
+          "date": "2025-10-08",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
+        },
+        {
+          "amount": 2708.19,
+          "date": "2025-10-08",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
         },
         {
           "amount": 5593.93,
@@ -5186,22 +5202,6 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 253218.05,
-          "date": "2025-10-08",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
-          "amount": 2708.19,
-          "date": "2025-10-08",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
           "amount": 1369.72,
           "date": "2025-10-03",
           "department": "Department of Housing Stability Special",
@@ -5218,20 +5218,20 @@
           "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
-          "amount": 3824.54,
-          "date": "2025-09-26",
-          "department": "Service Delivery and Administration",
-          "description": "Human Services",
-          "expense_category": "Leases and Rentals",
-          "funding_source": "Service Delivery and Administr"
-        },
-        {
           "amount": 17843.64,
           "date": "2025-09-26",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "General Fund"
+        },
+        {
+          "amount": 3824.54,
+          "date": "2025-09-26",
+          "department": "Service Delivery and Administration",
+          "description": "Human Services",
+          "expense_category": "Leases and Rentals",
+          "funding_source": "Service Delivery and Administr"
         },
         {
           "amount": 99905.2,
@@ -5338,7 +5338,7 @@
           "funding_source": "Continuum of Care"
         },
         {
-          "amount": 233681.02,
+          "amount": 18867.72,
           "date": "2025-07-31",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -5354,7 +5354,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 18867.72,
+          "amount": 233681.02,
           "date": "2025-07-31",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -5485,14 +5485,6 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 32428.4,
-          "date": "2025-12-26",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
           "amount": 44672.73,
           "date": "2025-12-26",
           "department": "Department of Housing Stability (HOST)",
@@ -5507,6 +5499,14 @@
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "General Fund"
+        },
+        {
+          "amount": 32428.4,
+          "date": "2025-12-26",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
         },
         {
           "amount": 935.55,
@@ -5533,14 +5533,6 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 7948.33,
-          "date": "2025-12-11",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
           "amount": 47791.15,
           "date": "2025-12-11",
           "department": "Department of Housing Stability (HOST)",
@@ -5557,7 +5549,15 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 15403.76,
+          "amount": 7948.33,
+          "date": "2025-12-11",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
+        },
+        {
+          "amount": 12786.81,
           "date": "2025-12-01",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -5573,7 +5573,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 12786.81,
+          "amount": 15403.76,
           "date": "2025-12-01",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -5581,12 +5581,12 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 45938.38,
+          "amount": 38297.52,
           "date": "2025-11-24",
-          "department": "Department of Housing Stability (HOST)",
+          "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
-          "funding_source": "General Fund"
+          "funding_source": "Homelessness Resolution"
         },
         {
           "amount": 10354.07,
@@ -5605,24 +5605,8 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 38297.52,
+          "amount": 45938.38,
           "date": "2025-11-24",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 11413.11,
-          "date": "2025-11-07",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
-          "amount": 13219.64,
-          "date": "2025-11-07",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
@@ -5645,15 +5629,15 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 37607.45,
+          "amount": 43967.47,
           "date": "2025-11-07",
-          "department": "Department of Housing Stability Special",
+          "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
+          "funding_source": "General Fund"
         },
         {
-          "amount": 43967.47,
+          "amount": 11413.11,
           "date": "2025-11-07",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -5677,7 +5661,15 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 4543.51,
+          "amount": 37607.45,
+          "date": "2025-11-07",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 13219.64,
           "date": "2025-11-07",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -5685,16 +5677,8 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 5333.7,
-          "date": "2025-11-05",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
-          "amount": 2860.12,
-          "date": "2025-11-05",
+          "amount": 4543.51,
+          "date": "2025-11-07",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
@@ -5717,8 +5701,16 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 1102.86,
-          "date": "2025-10-29",
+          "amount": 2860.12,
+          "date": "2025-11-05",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
+        },
+        {
+          "amount": 5333.7,
+          "date": "2025-11-05",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
@@ -5731,6 +5723,14 @@
           "description": "A2_Colorado Village Collaborat",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Federal Grant - Other - Health"
+        },
+        {
+          "amount": 1102.86,
+          "date": "2025-10-29",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
         },
         {
           "amount": 49194.67,
@@ -5749,14 +5749,6 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 11191.86,
-          "date": "2025-10-24",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
           "amount": 39046.05,
           "date": "2025-10-24",
           "department": "Department of Housing Stability (HOST)",
@@ -5765,12 +5757,12 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 29195.41,
-          "date": "2025-10-15",
-          "department": "Department of Housing Stability Special",
+          "amount": 11191.86,
+          "date": "2025-10-24",
+          "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
+          "funding_source": "General Fund"
         },
         {
           "amount": 7443.62,
@@ -5789,12 +5781,12 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 49333.4,
-          "date": "2025-10-10",
-          "department": "Department of Housing Stability (HOST)",
+          "amount": 29195.41,
+          "date": "2025-10-15",
+          "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
-          "funding_source": "General Fund"
+          "funding_source": "Homelessness Resolution"
         },
         {
           "amount": 33017.01,
@@ -5805,7 +5797,15 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 33954.54,
+          "amount": 49333.4,
+          "date": "2025-10-10",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
+        },
+        {
+          "amount": 46708.58,
           "date": "2025-09-26",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -5829,16 +5829,8 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 46708.58,
+          "amount": 33954.54,
           "date": "2025-09-26",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
-          "amount": 20714.06,
-          "date": "2025-09-23",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
@@ -5853,8 +5845,8 @@
           "funding_source": "Federal Grant - Other - Health"
         },
         {
-          "amount": 44133.48,
-          "date": "2025-09-05",
+          "amount": 20714.06,
+          "date": "2025-09-23",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
@@ -5867,6 +5859,14 @@
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 10581.3,
+          "date": "2025-09-05",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
         }
       ],
       "slug": "tiny-homes-beloved-community-village-operator",
@@ -6020,7 +6020,7 @@
           "funding_source": "Healthy Foods for Denver's Kid"
         },
         {
-          "amount": 3960.19,
+          "amount": 14426.03,
           "date": "2025-12-08",
           "department": "Mayor's Office of Education and Children",
           "description": "General Government",
@@ -6028,7 +6028,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 14426.03,
+          "amount": 3960.19,
           "date": "2025-12-08",
           "department": "Mayor's Office of Education and Children",
           "description": "General Government",
@@ -6092,7 +6092,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 30766.91,
+          "amount": 23849.63,
           "date": "2025-10-16",
           "department": "Denver Department of Public Health and E",
           "description": "Health",
@@ -6100,7 +6100,7 @@
           "funding_source": "Healthy Foods for Denver's Kid"
         },
         {
-          "amount": 23849.63,
+          "amount": 30766.91,
           "date": "2025-10-16",
           "department": "Denver Department of Public Health and E",
           "description": "Health",
@@ -6188,20 +6188,20 @@
           "funding_source": "Airport Operations & Maintenan"
         },
         {
-          "amount": 96731.37,
-          "date": "2025-08-14",
-          "department": "Denver Department of Public Health and E",
-          "description": "Health",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
           "amount": 116236.67,
           "date": "2025-08-14",
           "department": "Denver Department of Public Health and E",
           "description": "La Raza Services Inc STAR '24-",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Health Private and Other Grant"
+        },
+        {
+          "amount": 96731.37,
+          "date": "2025-08-14",
+          "department": "Denver Department of Public Health and E",
+          "description": "Health",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
         },
         {
           "amount": 2500.0,
@@ -6220,7 +6220,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 17545.85,
+          "amount": 15757.44,
           "date": "2025-07-22",
           "department": "Denver Department of Public Health and E",
           "description": "SDLR sub-award (RW FY 2025)",
@@ -6252,7 +6252,7 @@
           "funding_source": "Ryan White Title I"
         },
         {
-          "amount": 15757.44,
+          "amount": 17545.85,
           "date": "2025-07-22",
           "department": "Denver Department of Public Health and E",
           "description": "SDLR sub-award (RW FY 2025)",
@@ -6300,7 +6300,7 @@
           "funding_source": "State Grants - Other - Economi"
         },
         {
-          "amount": 13178.33,
+          "amount": 30773.27,
           "date": "2025-07-07",
           "department": "Division of Workforce Development",
           "description": "FFY22 RUN - Servicios de la Ra",
@@ -6308,7 +6308,7 @@
           "funding_source": "State Grants - Other - Economi"
         },
         {
-          "amount": 30773.27,
+          "amount": 13178.33,
           "date": "2025-07-07",
           "department": "Division of Workforce Development",
           "description": "FFY22 RUN - Servicios de la Ra",
@@ -6454,11 +6454,11 @@
         },
         {
           "amount": 108000.0,
-          "name": "American Rescue Plan Act"
+          "name": "Community Development State Gr"
         },
         {
           "amount": 108000.0,
-          "name": "Community Development State Gr"
+          "name": "American Rescue Plan Act"
         },
         {
           "amount": 64734.7,
@@ -6547,20 +6547,20 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 12416.0,
-          "date": "2025-12-01",
-          "department": "Child Welfare",
-          "description": "Human Services",
-          "expense_category": "Professional Services",
-          "funding_source": "Service Delivery and Administr"
-        },
-        {
           "amount": 1843.68,
           "date": "2025-12-01",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 12416.0,
+          "date": "2025-12-01",
+          "department": "Child Welfare",
+          "description": "Human Services",
+          "expense_category": "Professional Services",
+          "funding_source": "Service Delivery and Administr"
         },
         {
           "amount": 167575.5,
@@ -6571,7 +6571,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 4973.27,
+          "amount": 4057.97,
           "date": "2025-11-14",
           "department": "Department of Housing Stability Special",
           "description": "Urban Peak (ESG 1/1/2025-3/31/",
@@ -6579,7 +6579,7 @@
           "funding_source": "Emergency Solutions Grant"
         },
         {
-          "amount": 4057.97,
+          "amount": 4973.27,
           "date": "2025-11-14",
           "department": "Department of Housing Stability Special",
           "description": "Urban Peak (ESG 1/1/2025-3/31/",
@@ -6603,7 +6603,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 1431.52,
+          "amount": 40991.81,
           "date": "2025-11-06",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -6611,7 +6611,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 40991.81,
+          "amount": 1431.52,
           "date": "2025-11-06",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -6628,14 +6628,6 @@
         },
         {
           "amount": 418.43,
-          "date": "2025-10-31",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
-        },
-        {
-          "amount": 113.29,
           "date": "2025-10-31",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -6660,6 +6652,14 @@
         },
         {
           "amount": 3254.41,
+          "date": "2025-10-31",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
+        },
+        {
+          "amount": 113.29,
           "date": "2025-10-31",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -6699,7 +6699,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 246.53,
+          "amount": 80.39,
           "date": "2025-10-23",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -6723,7 +6723,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 80.39,
+          "amount": 246.53,
           "date": "2025-10-23",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -6739,12 +6739,12 @@
           "funding_source": "Emergency Solutions Grant"
         },
         {
-          "amount": 1447.8,
+          "amount": 217096.57,
           "date": "2025-10-17",
-          "department": "Department of Housing Stability Special",
-          "description": "Urban Peak Denver (BPX 10/1/24",
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
           "expense_category": "Professional Services",
-          "funding_source": "Homeless Shelter Utility Suppo"
+          "funding_source": "General Fund"
         },
         {
           "amount": 4350.23,
@@ -6755,12 +6755,12 @@
           "funding_source": "Emergency Solutions Grant"
         },
         {
-          "amount": 217096.57,
+          "amount": 1447.8,
           "date": "2025-10-17",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
+          "department": "Department of Housing Stability Special",
+          "description": "Urban Peak Denver (BPX 10/1/24",
           "expense_category": "Professional Services",
-          "funding_source": "General Fund"
+          "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
           "amount": 51378.62,
@@ -6811,15 +6811,7 @@
           "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
-          "amount": 2140.0,
-          "date": "2025-09-05",
-          "department": "Department of Housing Stability Special",
-          "description": "Urban Peak (ESG 1/1/2025-3/31/",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Emergency Solutions Grant"
-        },
-        {
-          "amount": 574.5,
+          "amount": 3092.07,
           "date": "2025-09-05",
           "department": "Department of Housing Stability Special",
           "description": "Urban Peak (ESG 1/1/2025-3/31/",
@@ -6835,7 +6827,7 @@
           "funding_source": "Emergency Solutions Grant"
         },
         {
-          "amount": 3092.07,
+          "amount": 2140.0,
           "date": "2025-09-05",
           "department": "Department of Housing Stability Special",
           "description": "Urban Peak (ESG 1/1/2025-3/31/",
@@ -6843,7 +6835,7 @@
           "funding_source": "Emergency Solutions Grant"
         },
         {
-          "amount": 3216.83,
+          "amount": 3272.72,
           "date": "2025-09-05",
           "department": "Department of Housing Stability Special",
           "description": "Urban Peak (ESG 1/1/2025-3/31/",
@@ -6859,28 +6851,36 @@
           "funding_source": "Emergency Solutions Grant"
         },
         {
-          "amount": 36587.11,
-          "date": "2025-09-05",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 3272.72,
-          "date": "2025-09-05",
-          "department": "Department of Housing Stability Special",
-          "description": "Urban Peak (ESG 1/1/2025-3/31/",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Emergency Solutions Grant"
-        },
-        {
           "amount": 5070.67,
           "date": "2025-09-05",
           "department": "Department of Housing Stability Special",
           "description": "Urban Peak (ESG 1/1/2025-3/31/",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Emergency Solutions Grant"
+        },
+        {
+          "amount": 574.5,
+          "date": "2025-09-05",
+          "department": "Department of Housing Stability Special",
+          "description": "Urban Peak (ESG 1/1/2025-3/31/",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Emergency Solutions Grant"
+        },
+        {
+          "amount": 3216.83,
+          "date": "2025-09-05",
+          "department": "Department of Housing Stability Special",
+          "description": "Urban Peak (ESG 1/1/2025-3/31/",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Emergency Solutions Grant"
+        },
+        {
+          "amount": 36587.11,
+          "date": "2025-09-05",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
         }
       ],
       "slug": "urban-peak",
@@ -7082,20 +7082,20 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 5921.87,
-          "date": "2025-07-23",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
           "amount": 2732.25,
           "date": "2025-07-23",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "General Fund"
+        },
+        {
+          "amount": 5921.87,
+          "date": "2025-07-23",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
         },
         {
           "amount": 6533.52,
@@ -7178,7 +7178,7 @@
           "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
-          "amount": 70561.52,
+          "amount": 74379.91,
           "date": "2025-06-20",
           "department": "Department of Housing Stability Special",
           "description": "The Gathering Place - Elati -",
@@ -7186,7 +7186,7 @@
           "funding_source": "Federal Grant - Other - Commun"
         },
         {
-          "amount": 74379.91,
+          "amount": 70561.52,
           "date": "2025-06-20",
           "department": "Department of Housing Stability Special",
           "description": "The Gathering Place - Elati -",
@@ -7202,7 +7202,7 @@
           "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
-          "amount": 868.25,
+          "amount": 6045.65,
           "date": "2025-05-22",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -7210,7 +7210,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 6045.65,
+          "amount": 868.25,
           "date": "2025-05-22",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -7224,14 +7224,6 @@
           "description": "The Gathering Place (BPX 10/1/",
           "expense_category": "Professional Services",
           "funding_source": "Homeless Shelter Utility Suppo"
-        },
-        {
-          "amount": 4039.59,
-          "date": "2025-04-18",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
         },
         {
           "amount": 5402.04,
@@ -7248,6 +7240,14 @@
           "description": "The Gathering Place - Elati -",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Federal Grant - Other - Commun"
+        },
+        {
+          "amount": 4039.59,
+          "date": "2025-04-18",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
         },
         {
           "amount": 4509.84,
@@ -7314,7 +7314,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 125319.86,
+          "amount": 135310.48,
           "date": "2025-02-14",
           "department": "Department of Housing Stability Special",
           "description": "The Gathering Place - Elati -",
@@ -7322,7 +7322,7 @@
           "funding_source": "Federal Grant - Other - Commun"
         },
         {
-          "amount": 135310.48,
+          "amount": 125319.86,
           "date": "2025-02-14",
           "department": "Department of Housing Stability Special",
           "description": "The Gathering Place - Elati -",
@@ -7457,7 +7457,23 @@
           "funding_source": "Ryan White Title I"
         },
         {
-          "amount": 42363.98,
+          "amount": 385.38,
+          "date": "2025-11-13",
+          "department": "Department of Housing Stability Special",
+          "description": "FY 2025 THE EMPOWERMENT PROGRA",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Housing Opportunities for Peop"
+        },
+        {
+          "amount": 3490.99,
+          "date": "2025-11-13",
+          "department": "Department of Housing Stability Special",
+          "description": "CO0104L8T032316 COC BEDROCK FY",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Continuum of Care"
+        },
+        {
+          "amount": 3249.0,
           "date": "2025-11-13",
           "department": "Department of Housing Stability Special",
           "description": "CO0104L8T032316 COC BEDROCK FY",
@@ -7473,28 +7489,12 @@
           "funding_source": "Housing Opportunities for Peop"
         },
         {
-          "amount": 3249.0,
+          "amount": 42363.98,
           "date": "2025-11-13",
           "department": "Department of Housing Stability Special",
           "description": "CO0104L8T032316 COC BEDROCK FY",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Continuum of Care"
-        },
-        {
-          "amount": 3490.99,
-          "date": "2025-11-13",
-          "department": "Department of Housing Stability Special",
-          "description": "CO0104L8T032316 COC BEDROCK FY",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Continuum of Care"
-        },
-        {
-          "amount": 385.38,
-          "date": "2025-11-13",
-          "department": "Department of Housing Stability Special",
-          "description": "FY 2025 THE EMPOWERMENT PROGRA",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Housing Opportunities for Peop"
         },
         {
           "amount": 127079.81,
@@ -7505,23 +7505,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 6918.88,
-          "date": "2025-10-17",
-          "department": "Department of Housing Stability Special",
-          "description": "CO0104L8T032316 COC BEDROCK FY",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Continuum of Care"
-        },
-        {
           "amount": 43057.0,
-          "date": "2025-10-17",
-          "department": "Department of Housing Stability Special",
-          "description": "CO0104L8T032316 COC BEDROCK FY",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Continuum of Care"
-        },
-        {
-          "amount": 14271.81,
           "date": "2025-10-17",
           "department": "Department of Housing Stability Special",
           "description": "CO0104L8T032316 COC BEDROCK FY",
@@ -7537,12 +7521,44 @@
           "funding_source": "Housing Opportunities for Peop"
         },
         {
+          "amount": 6918.88,
+          "date": "2025-10-17",
+          "department": "Department of Housing Stability Special",
+          "description": "CO0104L8T032316 COC BEDROCK FY",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Continuum of Care"
+        },
+        {
+          "amount": 14271.81,
+          "date": "2025-10-17",
+          "department": "Department of Housing Stability Special",
+          "description": "CO0104L8T032316 COC BEDROCK FY",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Continuum of Care"
+        },
+        {
           "amount": 9909.72,
           "date": "2025-09-30",
           "department": "Denver Department of Public Health and E",
           "description": "TEP sub-award (RW FY 2025)",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Ryan White Title I"
+        },
+        {
+          "amount": 43279.0,
+          "date": "2025-09-12",
+          "department": "Department of Housing Stability Special",
+          "description": "CO0104L8T032316 COC BEDROCK FY",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Continuum of Care"
+        },
+        {
+          "amount": 6919.54,
+          "date": "2025-09-12",
+          "department": "Department of Housing Stability Special",
+          "description": "CO0104L8T032316 COC BEDROCK FY",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Continuum of Care"
         },
         {
           "amount": 14271.82,
@@ -7561,52 +7577,12 @@
           "funding_source": "Housing Opportunities for Peop"
         },
         {
-          "amount": 6919.54,
-          "date": "2025-09-12",
-          "department": "Department of Housing Stability Special",
-          "description": "CO0104L8T032316 COC BEDROCK FY",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Continuum of Care"
-        },
-        {
-          "amount": 43279.0,
-          "date": "2025-09-12",
-          "department": "Department of Housing Stability Special",
-          "description": "CO0104L8T032316 COC BEDROCK FY",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Continuum of Care"
-        },
-        {
           "amount": 4778.75,
           "date": "2025-08-19",
           "department": "Denver Department of Public Health and E",
           "description": "TEP sub-award (RW FY 2025)",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Ryan White Title I"
-        },
-        {
-          "amount": 2167.62,
-          "date": "2025-08-13",
-          "department": "Department of Housing Stability Special",
-          "description": "CO0104L8T032316 COC BEDROCK FY",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Continuum of Care"
-        },
-        {
-          "amount": 4721.77,
-          "date": "2025-08-13",
-          "department": "Department of Housing Stability Special",
-          "description": "CO0055L8T032316 COC SPECTRUM F",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Continuum of Care"
-        },
-        {
-          "amount": 9090.32,
-          "date": "2025-08-13",
-          "department": "Department of Housing Stability Special",
-          "description": "FY 2025 THE EMPOWERMENT PROGRA",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Housing Opportunities for Peop"
         },
         {
           "amount": 35514.0,
@@ -7633,12 +7609,52 @@
           "funding_source": "Continuum of Care"
         },
         {
+          "amount": 2167.62,
+          "date": "2025-08-13",
+          "department": "Department of Housing Stability Special",
+          "description": "CO0104L8T032316 COC BEDROCK FY",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Continuum of Care"
+        },
+        {
+          "amount": 4721.77,
+          "date": "2025-08-13",
+          "department": "Department of Housing Stability Special",
+          "description": "CO0055L8T032316 COC SPECTRUM F",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Continuum of Care"
+        },
+        {
+          "amount": 9090.32,
+          "date": "2025-08-13",
+          "department": "Department of Housing Stability Special",
+          "description": "FY 2025 THE EMPOWERMENT PROGRA",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Housing Opportunities for Peop"
+        },
+        {
           "amount": 111491.3,
           "date": "2025-07-30",
           "department": "Safety Administration",
           "description": "Public Safety",
           "expense_category": "Professional Services",
           "funding_source": "General Fund"
+        },
+        {
+          "amount": 6053.69,
+          "date": "2025-07-11",
+          "department": "Department of Housing Stability Special",
+          "description": "CO0055L8T032316 COC SPECTRUM F",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Continuum of Care"
+        },
+        {
+          "amount": 14146.31,
+          "date": "2025-07-11",
+          "department": "Department of Housing Stability Special",
+          "description": "CO0104L8T032316 COC BEDROCK FY",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Continuum of Care"
         },
         {
           "amount": 9.99,
@@ -7657,14 +7673,6 @@
           "funding_source": "Continuum of Care"
         },
         {
-          "amount": 6053.69,
-          "date": "2025-07-11",
-          "department": "Department of Housing Stability Special",
-          "description": "CO0055L8T032316 COC SPECTRUM F",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Continuum of Care"
-        },
-        {
           "amount": 9411.22,
           "date": "2025-07-11",
           "department": "Department of Housing Stability Special",
@@ -7673,15 +7681,7 @@
           "funding_source": "Housing Opportunities for Peop"
         },
         {
-          "amount": 14146.31,
-          "date": "2025-07-11",
-          "department": "Department of Housing Stability Special",
-          "description": "CO0104L8T032316 COC BEDROCK FY",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Continuum of Care"
-        },
-        {
-          "amount": 4278.65,
+          "amount": 6148.02,
           "date": "2025-06-25",
           "department": "Denver Department of Public Health and E",
           "description": "TEP sub-award (RW FY 2025)",
@@ -7697,7 +7697,7 @@
           "funding_source": "Ryan White Title I"
         },
         {
-          "amount": 6148.02,
+          "amount": 4278.65,
           "date": "2025-06-25",
           "department": "Denver Department of Public Health and E",
           "description": "TEP sub-award (RW FY 2025)",
@@ -7705,7 +7705,15 @@
           "funding_source": "Ryan White Title I"
         },
         {
-          "amount": 12007.53,
+          "amount": 40838.0,
+          "date": "2025-06-13",
+          "department": "Department of Housing Stability Special",
+          "description": "CO0104L8T032316 COC BEDROCK FY",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Continuum of Care"
+        },
+        {
+          "amount": 53.51,
           "date": "2025-06-13",
           "department": "Department of Housing Stability Special",
           "description": "FY 2025 THE EMPOWERMENT PROGRA",
@@ -7721,55 +7729,7 @@
           "funding_source": "Continuum of Care"
         },
         {
-          "amount": 14539.01,
-          "date": "2025-06-13",
-          "department": "Department of Housing Stability Special",
-          "description": "CO0104L8T032316 COC BEDROCK FY",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Continuum of Care"
-        },
-        {
-          "amount": 40838.0,
-          "date": "2025-06-13",
-          "department": "Department of Housing Stability Special",
-          "description": "CO0104L8T032316 COC BEDROCK FY",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Continuum of Care"
-        },
-        {
-          "amount": 11679.3,
-          "date": "2025-06-13",
-          "department": "Department of Housing Stability Special",
-          "description": "FY 2025 THE EMPOWERMENT PROGRA",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Housing Opportunities for Peop"
-        },
-        {
-          "amount": 10566.99,
-          "date": "2025-06-13",
-          "department": "Department of Housing Stability Special",
-          "description": "FY 2025 THE EMPOWERMENT PROGRA",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Housing Opportunities for Peop"
-        },
-        {
-          "amount": 10561.47,
-          "date": "2025-06-13",
-          "department": "Department of Housing Stability Special",
-          "description": "FY 2025 THE EMPOWERMENT PROGRA",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Housing Opportunities for Peop"
-        },
-        {
-          "amount": 123.7,
-          "date": "2025-06-13",
-          "department": "Department of Housing Stability Special",
-          "description": "FY 2025 THE EMPOWERMENT PROGRA",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Housing Opportunities for Peop"
-        },
-        {
-          "amount": 53.51,
+          "amount": 12007.53,
           "date": "2025-06-13",
           "department": "Department of Housing Stability Special",
           "description": "FY 2025 THE EMPOWERMENT PROGRA",
@@ -7785,12 +7745,52 @@
           "funding_source": "Continuum of Care"
         },
         {
+          "amount": 11679.3,
+          "date": "2025-06-13",
+          "department": "Department of Housing Stability Special",
+          "description": "FY 2025 THE EMPOWERMENT PROGRA",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Housing Opportunities for Peop"
+        },
+        {
+          "amount": 10561.47,
+          "date": "2025-06-13",
+          "department": "Department of Housing Stability Special",
+          "description": "FY 2025 THE EMPOWERMENT PROGRA",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Housing Opportunities for Peop"
+        },
+        {
+          "amount": 10566.99,
+          "date": "2025-06-13",
+          "department": "Department of Housing Stability Special",
+          "description": "FY 2025 THE EMPOWERMENT PROGRA",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Housing Opportunities for Peop"
+        },
+        {
+          "amount": 123.7,
+          "date": "2025-06-13",
+          "department": "Department of Housing Stability Special",
+          "description": "FY 2025 THE EMPOWERMENT PROGRA",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Housing Opportunities for Peop"
+        },
+        {
           "amount": 83.12,
           "date": "2025-06-13",
           "department": "Department of Housing Stability Special",
           "description": "FY 2025 THE EMPOWERMENT PROGRA",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Housing Opportunities for Peop"
+        },
+        {
+          "amount": 14539.01,
+          "date": "2025-06-13",
+          "department": "Department of Housing Stability Special",
+          "description": "CO0104L8T032316 COC BEDROCK FY",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Continuum of Care"
         },
         {
           "amount": 497.45,
@@ -7809,7 +7809,7 @@
           "funding_source": "Continuum of Care"
         },
         {
-          "amount": 15216.69,
+          "amount": 3358.93,
           "date": "2025-05-16",
           "department": "Department of Housing Stability Special",
           "description": "CO0055L8T032316 COC SPECTRUM F",
@@ -7996,20 +7996,20 @@
           "funding_source": "Federal Grant - Other - Health"
         },
         {
+          "amount": 12416.55,
+          "date": "2025-11-14",
+          "department": "Department of Housing Stability Special",
+          "description": "The Delores Project (ESG 1/1/2",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Emergency Solutions Grant"
+        },
+        {
           "amount": 38610.4,
           "date": "2025-11-14",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "Homelessness Resolution"
-        },
-        {
-          "amount": 91647.48,
-          "date": "2025-11-14",
-          "department": "Department of Housing Stability (HOST)",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "General Fund"
         },
         {
           "amount": 7527.01,
@@ -8020,12 +8020,12 @@
           "funding_source": "Emergency Solutions Grant"
         },
         {
-          "amount": 12416.55,
+          "amount": 91647.48,
           "date": "2025-11-14",
-          "department": "Department of Housing Stability Special",
-          "description": "The Delores Project (ESG 1/1/2",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Emergency Solutions Grant"
+          "department": "Department of Housing Stability (HOST)",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "General Fund"
         },
         {
           "amount": 13820.76,
@@ -8052,22 +8052,6 @@
           "funding_source": "Federal Grant - Other - Health"
         },
         {
-          "amount": 6057.99,
-          "date": "2025-10-15",
-          "department": "Department of Housing Stability Special",
-          "description": "The Delores Project (ESG 1/1/2",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Emergency Solutions Grant"
-        },
-        {
-          "amount": 8200.39,
-          "date": "2025-10-15",
-          "department": "Department of Housing Stability Special",
-          "description": "The Delores Project (ESG 1/1/2",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Emergency Solutions Grant"
-        },
-        {
           "amount": 22388.64,
           "date": "2025-10-15",
           "department": "Service Delivery and Administration",
@@ -8084,12 +8068,20 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 1921.52,
-          "date": "2025-10-03",
+          "amount": 8200.39,
+          "date": "2025-10-15",
           "department": "Department of Housing Stability Special",
-          "description": "The Delores Project (BPX 10/1/",
-          "expense_category": "Professional Services",
-          "funding_source": "Homeless Shelter Utility Suppo"
+          "description": "The Delores Project (ESG 1/1/2",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Emergency Solutions Grant"
+        },
+        {
+          "amount": 6057.99,
+          "date": "2025-10-15",
+          "department": "Department of Housing Stability Special",
+          "description": "The Delores Project (ESG 1/1/2",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Emergency Solutions Grant"
         },
         {
           "amount": 55281.89,
@@ -8100,7 +8092,15 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 1630.06,
+          "amount": 1921.52,
+          "date": "2025-10-03",
+          "department": "Department of Housing Stability Special",
+          "description": "The Delores Project (BPX 10/1/",
+          "expense_category": "Professional Services",
+          "funding_source": "Homeless Shelter Utility Suppo"
+        },
+        {
+          "amount": 1891.04,
           "date": "2025-09-24",
           "department": "Department of Housing Stability Special",
           "description": "The Delores Project (BPX 10/1/",
@@ -8116,7 +8116,7 @@
           "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
-          "amount": 1891.04,
+          "amount": 1630.06,
           "date": "2025-09-24",
           "department": "Department of Housing Stability Special",
           "description": "The Delores Project (BPX 10/1/",
@@ -8124,7 +8124,7 @@
           "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
-          "amount": 4331.79,
+          "amount": 4581.37,
           "date": "2025-09-12",
           "department": "Department of Housing Stability Special",
           "description": "The Delores Project (ESG 1/1/2",
@@ -8140,20 +8140,12 @@
           "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
-          "amount": 4581.37,
+          "amount": 51492.35,
           "date": "2025-09-12",
-          "department": "Department of Housing Stability Special",
-          "description": "The Delores Project (ESG 1/1/2",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Emergency Solutions Grant"
-        },
-        {
-          "amount": 27227.31,
-          "date": "2025-09-12",
-          "department": "Department of Housing Stability Special",
+          "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
           "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
+          "funding_source": "General Fund"
         },
         {
           "amount": 13578.55,
@@ -8164,12 +8156,20 @@
           "funding_source": "Community Service Block Grant"
         },
         {
-          "amount": 51492.35,
+          "amount": 27227.31,
           "date": "2025-09-12",
-          "department": "Department of Housing Stability (HOST)",
+          "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
-          "funding_source": "General Fund"
+          "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 4331.79,
+          "date": "2025-09-12",
+          "department": "Department of Housing Stability Special",
+          "description": "The Delores Project (ESG 1/1/2",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Emergency Solutions Grant"
         },
         {
           "amount": 6646.57,
@@ -8252,18 +8252,18 @@
           "funding_source": "Community Service Block Grant"
         },
         {
-          "amount": 11153.97,
-          "date": "2025-07-18",
-          "department": "Service Delivery and Administration",
-          "description": "The Delores Project - FY25",
-          "expense_category": "Grant Award To Subrecipient",
-          "funding_source": "Community Service Block Grant"
-        },
-        {
           "amount": 6015.24,
           "date": "2025-07-18",
           "department": "Service Delivery and Administration",
           "description": "FY24 The Delores Project",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Community Service Block Grant"
+        },
+        {
+          "amount": 11153.97,
+          "date": "2025-07-18",
+          "department": "Service Delivery and Administration",
+          "description": "The Delores Project - FY25",
           "expense_category": "Grant Award To Subrecipient",
           "funding_source": "Community Service Block Grant"
         },
@@ -8308,12 +8308,12 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 1941.78,
+          "amount": 12293.65,
           "date": "2025-07-09",
-          "department": "Department of Housing Stability Special",
-          "description": "The Delores Project (BPX 10/1/",
-          "expense_category": "Professional Services",
-          "funding_source": "Homeless Shelter Utility Suppo"
+          "department": "Service Delivery and Administration",
+          "description": "FY24 The Delores Project",
+          "expense_category": "Grant Award To Subrecipient",
+          "funding_source": "Community Service Block Grant"
         }
       ],
       "slug": "delores-project",
@@ -8387,7 +8387,7 @@
           "funding_source": "Healthy Foods for Denver's Kid"
         },
         {
-          "amount": 32455.13,
+          "amount": 23504.9,
           "date": "2025-12-03",
           "department": "Denver Department of Public Health and E",
           "description": "Health",
@@ -8395,7 +8395,7 @@
           "funding_source": "Healthy Foods for Denver's Kid"
         },
         {
-          "amount": 23504.9,
+          "amount": 32455.13,
           "date": "2025-12-03",
           "department": "Denver Department of Public Health and E",
           "description": "Health",
@@ -8650,7 +8650,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 472.36,
+          "amount": 7602.65,
           "date": "2025-08-14",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -8658,7 +8658,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 7602.65,
+          "amount": 472.36,
           "date": "2025-08-14",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -8690,7 +8690,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 10961.6,
+          "amount": 8865.41,
           "date": "2025-06-13",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -8698,7 +8698,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 8865.41,
+          "amount": 10961.6,
           "date": "2025-06-13",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -8714,7 +8714,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 9622.12,
+          "amount": 12781.65,
           "date": "2025-05-02",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -8722,7 +8722,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 12781.65,
+          "amount": 9622.12,
           "date": "2025-05-02",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -8754,7 +8754,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 5898.92,
+          "amount": 7070.82,
           "date": "2025-02-14",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -8762,7 +8762,7 @@
           "funding_source": "General Fund"
         },
         {
-          "amount": 7070.82,
+          "amount": 5898.92,
           "date": "2025-02-14",
           "department": "Department of Housing Stability (HOST)",
           "description": "Community Development",
@@ -8778,7 +8778,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 214.79,
+          "amount": 540.93,
           "date": "2025-01-31",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -8786,7 +8786,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 540.93,
+          "amount": 214.79,
           "date": "2025-01-31",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -8810,14 +8810,6 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 435.12,
-          "date": "2025-01-30",
-          "department": "Department of Housing Stability Special",
-          "description": "Community Development",
-          "expense_category": "Professional Services",
-          "funding_source": "Homelessness Resolution"
-        },
-        {
           "amount": 540.94,
           "date": "2025-01-30",
           "department": "Department of Housing Stability Special",
@@ -8827,6 +8819,14 @@
         },
         {
           "amount": 778.55,
+          "date": "2025-01-30",
+          "department": "Department of Housing Stability Special",
+          "description": "Community Development",
+          "expense_category": "Professional Services",
+          "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 435.12,
           "date": "2025-01-30",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -8969,20 +8969,20 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 1051.03,
-          "date": "2025-07-17",
-          "department": "Department of Housing Stability Special",
-          "description": "Senior Support Services (BPX 1",
-          "expense_category": "Professional Services",
-          "funding_source": "Homeless Shelter Utility Suppo"
-        },
-        {
           "amount": 20227.71,
           "date": "2025-07-17",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 1051.03,
+          "date": "2025-07-17",
+          "department": "Department of Housing Stability Special",
+          "description": "Senior Support Services (BPX 1",
+          "expense_category": "Professional Services",
+          "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
           "amount": 364.2,
@@ -9017,20 +9017,20 @@
           "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
-          "amount": 985.71,
-          "date": "2025-04-11",
-          "department": "Department of Housing Stability Special",
-          "description": "Senior Support Services (BPX 1",
-          "expense_category": "Professional Services",
-          "funding_source": "Homeless Shelter Utility Suppo"
-        },
-        {
           "amount": 6274.98,
           "date": "2025-04-11",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
           "expense_category": "Professional Services",
           "funding_source": "Homelessness Resolution"
+        },
+        {
+          "amount": 985.71,
+          "date": "2025-04-11",
+          "department": "Department of Housing Stability Special",
+          "description": "Senior Support Services (BPX 1",
+          "expense_category": "Professional Services",
+          "funding_source": "Homeless Shelter Utility Suppo"
         },
         {
           "amount": 918.18,
@@ -9057,7 +9057,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 6201.66,
+          "amount": 16365.5,
           "date": "2025-01-30",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -9065,7 +9065,7 @@
           "funding_source": "Homelessness Resolution"
         },
         {
-          "amount": 16365.5,
+          "amount": 6201.66,
           "date": "2025-01-30",
           "department": "Department of Housing Stability Special",
           "description": "Community Development",
@@ -9120,7 +9120,7 @@
           "funding_source": "Ryan White Title I"
         },
         {
-          "amount": 559.36,
+          "amount": 4176.61,
           "date": "2025-07-31",
           "department": "Denver Department of Public Health and E",
           "description": "STRIDE sub-award (RW FY 2025)",
@@ -9128,7 +9128,7 @@
           "funding_source": "Ryan White Title I"
         },
         {
-          "amount": 4176.61,
+          "amount": 559.36,
           "date": "2025-07-31",
           "department": "Denver Department of Public Health and E",
           "description": "STRIDE sub-award (RW FY 2025)",
