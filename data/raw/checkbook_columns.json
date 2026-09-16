@@ -83,7 +83,7 @@
   ],
   "dataset_id": "wnau-xrqi",
   "endpoint": "https://data.colorado.gov/resource/wnau-xrqi.json",
-  "fetched_at": "2026-09-15T14:19:18.456425+00:00",
+  "fetched_at": "2026-09-16T14:11:34.304172+00:00",
   "resolved": {
     "amount_field": "amount",
     "date_field": "paymentdate",
