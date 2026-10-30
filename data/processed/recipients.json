@@ -597,8 +597,8 @@
     }
   ],
   "meta": {
-    "generated_at": "2026-10-29T16:06:49.878895+00:00",
-    "last_checkbook_fetch_at": "2026-10-29T16:06:49.797124+00:00",
+    "generated_at": "2026-10-30T15:55:45.991351+00:00",
+    "last_checkbook_fetch_at": "2026-10-30T15:55:45.920418+00:00",
     "n_payments": 483,
     "n_recipients": 20,
     "n_seeds": 30,
