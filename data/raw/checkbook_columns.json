@@ -79,15 +79,20 @@
       "dataTypeName": "text",
       "fieldName": "expensesubcategory",
       "name": "ExpenseSubCategory"
+    },
+    {
+      "dataTypeName": "number",
+      "fieldName": "objectid",
+      "name": "objectID"
     }
   ],
   "dataset_id": "wnau-xrqi",
   "endpoint": "https://data.colorado.gov/resource/wnau-xrqi.json",
-  "fetched_at": "2026-11-03T17:01:21.840883+00:00",
+  "fetched_at": "2026-11-04T17:13:55.624717+00:00",
   "resolved": {
     "amount_field": "amount",
     "date_field": "paymentdate",
     "vendor_field": "payee"
   },
-  "rows_updated_at": 1790854913
+  "rows_updated_at": 1793808776
 }
